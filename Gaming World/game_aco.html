@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<head>
+    
+    <title>Assassin's Creed Origins</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/productstyles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="home.html">Gaming World</a>
+            </div>
+            <form class="navbar-form navbar-left" action="/action_page.php">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">PC
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">All games</a></li>
+                        <li><a href="#">Games on discount</a></li>
+                        <li><a href="#">On stock</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">PS4
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">All games</a></li>
+                        <li><a href="#">Games on discount</a></li>
+                        <li><a href="#">On stock</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Xbox ONE
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">All games</a></li>
+                        <li><a href="#">Games on discount</a></li>
+                        <li><a href="#">On stock</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nintendo Switch
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">All games</a></li>
+                        <li><a href="#">Games on discount</a></li>
+                        <li><a href="#">On stock</a></li>
+                    </ul>
+                </li>
+            </ul>                          
+            <div class="navbarbuttons">
+                <form>
+                    <button formaction="shoppingcart.html" class="btn btn-warning" type="submit" data-target="shoppingcart.html">
+                            <i class="glyphicon glyphicon-shopping-cart"></i>
+                    </button>
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Login">Login</button>
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Register">Register</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="modal" id="Login"  role="dialog" >
+        <div class="modal-dialog" >
+
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Login</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Log In</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="Register"  role="dialog" >
+        <div class="modal-dialog" >
+
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Register</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <input type="firstName" class="form-control" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="lastName" class="form-control" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirm Password">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Register</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="container-fluid">
+        <div class="content-wrapper">	
+            <div class="item-container">	
+                <div class="container">	
+                        
+                    <div class="col-md-7">
+                        <div><img src="src/acorigins.png"></div>
+                        <div class="product-title">Assassin's Creed Origins (PC)</div>
+                        <div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
+                        <hr>
+                        <div>
+
+                        </div>
+                        <h3 style="color: white;">Select game type</h3>
+                        <form id='product-type'>
+                            <input id='key' name='product-type' type='radio' value="a" checked="checked"/>Activation Key     
+                            <input id='hard-case' name='product-type' type='radio' value="b" />Hard-case Edition
+                        </form>
+                        <div id='key-price' style='display: block' class="product-price">$ 49.90</div>
+                        <div id='hard-case-price' style='display: none' class="product-price">$ 55.90</div>
+                        <hr>
+                        <div class="btn-group cart">
+                            <button type="button" class="btn-lg btn-warning">
+                                Add to cart 
+                            </button>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            
+
+            <!--PRODUCT CONTAINER-->
+            <div class="item-container">		
+                <div class="col-md-12 product-info">
+                    <ul id="myTab" class="nav nav-tabs nav_tabs"> 
+                        <li><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
+                        <li><a href="#service-two" data-toggle="tab">REVIEWS</a></li>
+                    </ul>
+
+                    <div id="myTabContent" class="tab-content">
+                          <!-- SERVICE ONE -->
+                        <div class="tab-pane fade" id="service-one">
+                            <section class="container product-desc">
+                                <p>Assassin's Creed: Origins is the tenth main installment in the Assassin's Creed series developed by Ubisoft. The game was released worldwide on October 27, 2017. bisoft Montreal is the lead development studio on Origins, with the team comprising many of the people that previously worked on Assassin's Creed IV: Black Flag. Ubisoft Sofia, Ubisoft Singapore, Ubisoft Shanghai, Ubisoft Chengdu, Ubisoft Bucharest, Ubisoft Kiev and the Sperasoft studio are also collaborating on the development of the game.[1]
+
+                                    Due to the setting being further back in time than previous entries in the franchise, history books did not always suffice as reference. To compensate, Maxime Durand worked closely with various historians and Egyptian experts to fill in the blanks where needed. In some cases, the lack of reference meant the Art team had to create the look and overall feel of what Ancient Egypt would have been like at the time.[1]
+                                    
+                                    A new Artificial Intelligence framework was also created from the ground up, since the developers wanted the non-player characters, both human and animal, to have their own agenda and activities. Full day cycles were created to make the world feel dynamic and alive.</p>
+                                
+                            </section>
+                        </div>
+
+                        <!-- SERVICE TWO -->
+                        <div class="tab-pane fade" id="service-two">
+                            <br>
+                            <div class="container">
+    			
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="rating-block">
+                                            <h4>Average user rating</h4>
+                                            <h2 class="bold padding-bottom-7">4.3 <small style="color: white;">/ 5</small></h2>
+                                            <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                                              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <textarea name="comment" id="comment-box" form="usrform">Enter text here...</textarea>
+                                            <button class="btn btn-warning">Submit review</button>
+                                        </div>
+                                    </div>
+                                    <div id="rating-breakdown" class="col-sm-3">
+                                        <h4>Rating breakdown</h4>
+                                        <div class="pull-left">
+                                            <div class="pull-left" style="width:35px; line-height:1;">
+                                                <div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
+                                            </div>
+                                            <div class="pull-left" style="width:180px;">
+                                                <div class="progress" style="height:9px; margin:8px 0;">
+                                                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+                                                    <span class="sr-only">80% Complete (danger)</span>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right" style="margin-left:10px;">1</div>
+                                        </div>
+                                        <div class="pull-left">
+                                            <div class="pull-left" style="width:35px; line-height:1;">
+                                                <div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
+                                            </div>
+                                            <div class="pull-left" style="width:180px;">
+                                                <div class="progress" style="height:9px; margin:8px 0;">
+                                                  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+                                                    <span class="sr-only">80% Complete (danger)</span>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right" style="margin-left:10px;">1</div>
+                                        </div>
+                                        <div class="pull-left">
+                                            <div class="pull-left" style="width:35px; line-height:1;">
+                                                <div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
+                                            </div>
+                                            <div class="pull-left" style="width:180px;">
+                                                <div class="progress" style="height:9px; margin:8px 0;">
+                                                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+                                                    <span class="sr-only">80% Complete (danger)</span>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right" style="margin-left:10px;">0</div>
+                                        </div>
+                                        <div class="pull-left">
+                                            <div class="pull-left" style="width:35px; line-height:1;">
+                                                <div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
+                                            </div>
+                                            <div class="pull-left" style="width:180px;">
+                                                <div class="progress" style="height:9px; margin:8px 0;">
+                                                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+                                                    <span class="sr-only">80% Complete (danger)</span>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right" style="margin-left:10px;">0</div>
+                                        </div>
+                                        <div class="pull-left">
+                                            <div class="pull-left" style="width:35px; line-height:1;">
+                                                <div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
+                                            </div>
+                                            <div class="pull-left" style="width:180px;">
+                                                <div class="progress" style="height:9px; margin:8px 0;">
+                                                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+                                                    <span class="sr-only">80% Complete (danger)</span>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right" style="margin-left:10px;">0</div>
+                                        </div>
+                                    </div>			
+                                </div>			
+                                
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <hr/>
+                                        <div class="review-block">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                                                    <div class="review-block-name"><a href="#">gdinca</a></div>
+                                                    <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <div class="review-block-rate">
+                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="review-block-title">this was nice in buy</div>
+                                                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                                                </div>
+                                            </div>
+                                            <hr/>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                                                    <div class="review-block-name"><a href="#">agogoase</a></div>
+                                                    <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <div class="review-block-rate">
+                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="review-block-title">this was nice in buy</div>
+                                                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                                                </div>
+                                            </div>
+                                            <hr/>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                                                    <div class="review-block-name"><a href="#">ddragan</a></div>
+                                                    <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <div class="review-block-rate">
+                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                                                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="review-block-title">this was nice in buy</div>
+                                                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>                            
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <label>
+            <div class="footer">
+                <div class="footerdiv">
+                    <h1 class="orangeTextLarge">Info</h1>
+                    <p>Pozele de pe site au rol ilustrativ.</p>
+                    <p>Produsele reale pot diferi!</p>
+                    <p>Ne rezervăm dreptul de a schimba prețurile, dacă este cazul!</p>
+                </div>
+                <div class="footerdiv">
+                    <h1 class="orangeTextLarge">Contact</h1>
+                    <p>Pe parcursul saptamanii intre orele 09:00-17:00</p>
+                    <p>Telefon:07600000</p>
+                    <p>Email:<a href="gamingworld@gmail.com">gamingworld@gmail.com</a></p>
+                </div>   
+            </div>
+        </label>
+    </footer>
+</body>
+</html>
