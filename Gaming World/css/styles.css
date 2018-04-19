@@ -146,6 +146,50 @@ Carousel{
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 
 /*********************************************
+    			Pop-Up
+*********************************************/
+.modal-content{
+    background: rgb(68, 68, 68);
+    border: rgb(68, 68, 68);
+}
+
+.modal-title{
+    color : white;
+}
+
+
+
+.form-control{
+    background: rgb(68, 68, 68);
+    color : white;
+    border:  rgb(68, 68, 68);
+    
+}
+
+input[type="email"]::-webkit-input-placeholder {
+    color: white;
+}
+
+input[type="password"]::-webkit-input-placeholder {
+    color: white;
+}
+
+input[type="firstname"]::-webkit-input-placeholder {
+    color: white;
+}
+
+input[type="lastName"]::-webkit-input-placeholder {
+    color: white;
+}
+
+
+input[type="text"]::-webkit-input-placeholder {
+    color: white;
+}
+
+
+
+/*********************************************
         		Theme Elements
 *********************************************/
 
