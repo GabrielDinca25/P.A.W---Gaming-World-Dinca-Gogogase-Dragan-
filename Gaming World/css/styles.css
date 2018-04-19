@@ -327,3 +327,16 @@ input[type="text"]::-webkit-input-placeholder {
 .service-image-left > center > img,.service-image-right > center > img{
 	max-height: 155px;
 }
+
+.centered-image
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a.styleless-link:hover, a.styleless-link:visited 
+{
+    text-decoration: none;
+    color:#9d9d9d;
+}
