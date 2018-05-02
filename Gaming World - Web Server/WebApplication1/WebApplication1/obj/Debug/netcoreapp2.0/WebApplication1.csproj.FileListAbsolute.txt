@@ -1,0 +1,22 @@
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojResolveAssemblyReference.cache
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csproj.CoreCompileInputs.cache
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfoInputs.cache
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojResolveAssemblyReference.cache
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csproj.CoreCompileInputs.cache
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfoInputs.cache
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
