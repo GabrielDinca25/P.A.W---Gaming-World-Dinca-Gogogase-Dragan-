@@ -9,10 +9,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link runat="server" href="~/css/styles.css" rel="stylesheet">
-    <link runat="server"rel="stylesheet" href="~/css/ionicons.min.css">
+    <link runat="server" rel="stylesheet" href="~/css/ionicons.min.css">
 
 </head>
+
 <body>
+    <script runat="server" type="text/javascript" src="~/js/GamesApi.js"></script>
+    <script>
+        var gamesApi = new GamesApi();
+        var games = gamesApi.getAllGames();
+        games.done(
+            function (response) {
+                for (var i = 0; i < response.length; i++) {
+                    $("#productGrid").append('<div style="display: inline-block; padding-right:10px;" class="image-main-section"> <div class="img-part"><div class="img-section"><img src="/images/' + response[i].image + '"></div><div class="image-title"><h3><a class="styleless-link" href="">' + response[i].name + '</a></h3></div><div class="image-description"><p>$' + response[i].keyPrice + '</p></div><div><a href="#" class="btn btn-warning add-cart-btn">ADD TO CART</a></div></div></div>');
+                }
+            });
+    </script>
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -153,8 +166,12 @@
         </div>
     </div>
 
+    <div id="productGrid">
+    </div>
 
 
+
+    <!--
     <div id="main">
         <div class="checkBlockLeft" id="checkBlock">
             <h1 class="orangeTextLarge">Platforme:</h1>
@@ -245,142 +262,9 @@
                 <span>Peste 500</span>
             </label>
         </div>
-        <div class="container main-section" id="productGrid">
-            <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
-                    <div class="row img-part">
-                        <div class="col-md-12 col-sm-12 colxs-12 img-section">
-                            <img runat="server" src="~/images/aco200x275.png">
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-                            <h3><a class="styleless-link" href="@Url.Action("ACOrigins", "Products")">Assassin's creed origins</a></h3>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-                            <p>199.90 lei</p>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <a href="#" class="btn btn-warning add-cart-btn">ADD TO CART</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
-                    <div class="row img-part">
-                        <div class="col-md-12 col-sm-12 colxs-12 img-section">
-                            <img src="https://dummyimage.com/200x150/000/ebecf5.png&text=++++image+++">
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-                            <h3>Image Title</h3>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-                            <p>Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et ...</p>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <a href="#" class="btn btn-warning add-cart-btn">ADD TO CART</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
-                    <div class="row img-part">
-                        <div class="col-md-12 col-sm-12 colxs-12 img-section">
-                            <img src="https://dummyimage.com/200x150/000/ebecf5.png&text=++++image+++">
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-                            <h3>Image Title</h3>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-                            <p>Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et ...</p>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <a href="#" class="btn btn-warning add-cart-btn">ADD TO CART</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
-                    <div class="row img-part">
-                        <div class="col-md-12 col-sm-12 colxs-12 img-section">
-                            <img src="https://dummyimage.com/200x150/000/ebecf5.png&text=++++image+++">
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-                            <h3>Image Title</h3>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-                            <p>Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et ...</p>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <a href="#" class="btn btn-warning add-cart-btn">ADD TO CART</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
-                    <div class="row img-part">
-                        <div class="col-md-12 col-sm-12 colxs-12 img-section">
-                            <img src="https://dummyimage.com/200x150/000/ebecf5.png&text=++++image+++">
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-                            <h3>Image Title</h3>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-                            <p>Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et ...</p>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <a href="#" class="btn btn-warning add-cart-btn">ADD TO CART</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
-                    <div class="row img-part">
-                        <div class="col-md-12 col-sm-12 colxs-12 img-section">
-                            <img src="https://dummyimage.com/200x150/000/ebecf5.png&text=++++image+++">
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-                            <h3>Image Title</h3>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-                            <p>Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et ...</p>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <a href="#" class="btn btn-warning add-cart-btn">ADD TO CART</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
-                    <div class="row img-part">
-                        <div class="col-md-12 col-sm-12 colxs-12 img-section">
-                            <img src="https://dummyimage.com/200x150/000/ebecf5.png&text=++++image+++">
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-                            <h3>Image Title</h3>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-                            <p>Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et ...</p>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <a href="#" class="btn btn-warning add-cart-btn">ADD TO CART</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 image-main-section">
-                    <div class="row img-part">
-                        <div class="col-md-12 col-sm-12 colxs-12 img-section">
-                            <img src="https://dummyimage.com/200x150/000/ebecf5.png&text=++++image+++">
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-                            <h3>Image Title</h3>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 image-description">
-                            <p>Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et ...</p>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <a href="#" class="btn btn-warning add-cart-btn">ADD TO CART</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        -->
 
-        </div>
-    </div>
+
 
     <footer>
         <label>
@@ -400,5 +284,6 @@
             </div>
         </label>
     </footer>
+
 </body>
 </html>

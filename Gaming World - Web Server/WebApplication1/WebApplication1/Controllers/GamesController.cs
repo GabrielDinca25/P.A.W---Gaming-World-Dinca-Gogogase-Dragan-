@@ -32,6 +32,19 @@ namespace WebApplication1.Controllers
             db.SaveChanges();
 
             return RedirectToAction("Admin", ControllerName);
+
+        }
+
+        [HttpGet("{id}", Name = "Get")]
+        public IEnumerable<Game> GetGames(int id)
+        {
+            return from g in db.Games select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image };
+
+            //return new Game[]
+            //{
+            //    new Game{ Name = "Fifa 2007", KeyPrice = "40", HardPrice = "45", Platform = "PC", Image= "fifa06.png"},
+            //    new Game{ Name = "Fifa 2008", KeyPrice = "41", HardPrice = "45", Platform = "PS4", Image= "fifa06.png"},
+            //};
         }
     }
 }

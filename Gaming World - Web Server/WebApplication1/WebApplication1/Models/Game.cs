@@ -16,6 +16,11 @@ namespace WebApplication1.Models
         public String Platform { get; set; }
         public String Image { get; set; }
 
+
+        public Game()
+        {
+        }
+
         public Game(String name, String key, String hard, String platform, String image)
         {
             Name = name;
