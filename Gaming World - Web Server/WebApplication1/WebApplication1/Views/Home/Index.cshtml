@@ -16,7 +16,7 @@
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="home.html">Gaming World</a>
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">Gaming World</a>
                 </div>
                 <form class="navbar-form navbar-left" action="/action_page.php">
                     <div class="input-group">
@@ -35,9 +35,9 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="games.html">All games</a></li>
-                            <li><a href="#">Games on discount</a></li>
-                            <li><a href="#">On stock</a></li>
+                            <li><a href="@Url.Action("Products", "Home")">All games</a></li>
+                            <li><a href="@Url.Action("Profile", "Home")">Games on discount</a></li>
+                            <li><a href="@Url.Action("Admin", "Home")">On stock</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -76,11 +76,11 @@
                 </ul>
                 <div class="navbarbuttons">
                     <form>
-                        <button formaction="ShoppingCart.cshtml" class="btn btn-warning" type="submit" data-target="ShoppingCart.cshtml">
-                            <i class="glyphicon glyphicon-shopping-cart"></i>
-                        </button>
+                        <a class="btn btn-warning" href="@Url.Action("ShoppingCart", "Home")"> <i class="glyphicon glyphicon-shopping-cart"></i></a>
+                        
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Login">Login</button>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Register">Register</button>
+
                     </form>
                 </div>
             </div>
@@ -130,13 +130,13 @@
                     <div class="modal-body">
                         <form role="form">
                             <div class="form-group">
-                                <input type="firstName" class="form-control" placeholder="First Name">
+                                <input type="text" class="form-control" placeholder="First Name">
                             </div>
                             <div class="form-group">
-                                <input type="lastName" class="form-control" placeholder="Last Name">
+                                <input type="text" class="form-control" placeholder="Last Name">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="text" class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" placeholder="Password">
@@ -170,7 +170,7 @@
                     <div class="item active">
                         <img class="centered-image" src="slider/org_origins.jpg">
                         <div class="carousel-caption">
-                            <a href="game_aco.html" class="btn btn-info" role="button">Buy now</a>
+                            <a href="@Url.Action("ACOrigins", "Products")" class="btn btn-info" role="button">Buy now</a>
                         </div>
 
                     </div>
@@ -295,7 +295,7 @@
                                 <img runat="server" src="~/images/aco200x275.png">
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12 image-title">
-                                <h3><a class="styleless-link" href="game_aco.html">Assassin's creed origins</a></h3>
+                                <h3><a class="styleless-link" href="@Url.Action("ACOrigins", "Products")">Assassin's creed origins</a></h3>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12 image-description">
                                 <p>$ 49.90 </p>
