@@ -7,6 +7,7 @@ using static WebApplication1.Models.User;
 
 namespace WebApplication1.Controllers
 {
+    [Route("api/[controller]")]
     public class LoginController : Controller
     {
         private UserDBContext db;
@@ -19,21 +20,21 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public ActionResult Get()
         {
-            String username = HttpContext.Request.Query["username"].ToString();
+            String email = HttpContext.Request.Query["email"].ToString();
             String password = HttpContext.Request.Query["password"].ToString();
 
             var users = from u in db.UserCredentials
-                        orderby u.Username
+                        orderby u.Email
                         select u;
 
 
             foreach (var user in users)
             {
-                if (user.Username.Equals(username))
+                if (user.Email.Equals(email))
                 {
                     if (user.Password.Equals(password))
                     {
-                        return RedirectToAction("HomePage", "Home");
+                        return RedirectToAction("Index", "Home");
                     }
                 }
             }

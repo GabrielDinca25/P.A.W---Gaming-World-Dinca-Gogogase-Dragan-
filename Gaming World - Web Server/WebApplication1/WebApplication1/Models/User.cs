@@ -7,14 +7,19 @@ namespace WebApplication1.Models
     public class User
     {
         [Key]
-        public String Username { get; set; }
+        public String FirstName { get; set; }
+        public String LastName { get; set; }
+        public String Email { get; set; }
         public String Password { get; set; }
+        
 
         public User() { }
 
-        public User(String username, String password)
+        public User(String firstName,String lastName,String email, String password)
         {
-            Username = username;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
             Password = password;
         }
 

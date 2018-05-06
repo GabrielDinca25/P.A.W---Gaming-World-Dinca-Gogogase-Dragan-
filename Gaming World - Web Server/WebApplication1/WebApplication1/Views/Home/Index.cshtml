@@ -126,29 +126,30 @@
                     </div>
 
                     <div class="modal-body">
-                        <form role="form">
+                        <form role="form" action="http://localhost:50209/api/register" method="get">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="First Name">
+                                <input type="text" name="firstName" class="form-control" placeholder="First Name">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Last Name">
+                                <input type="text" name="lastName" class="form-control" placeholder="Last Name">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email">
+                                <input type="text" name="email" class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password" name="password" class="form-control" placeholder="Password">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Confirm Password">
+                                <input type="password" name="confirmedPassword"class="form-control" placeholder="Confirm Password">
+                            </div>
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-warning" value="Register">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
 
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning">Register</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
+                    
                 </div>
             </div>
         </div>
