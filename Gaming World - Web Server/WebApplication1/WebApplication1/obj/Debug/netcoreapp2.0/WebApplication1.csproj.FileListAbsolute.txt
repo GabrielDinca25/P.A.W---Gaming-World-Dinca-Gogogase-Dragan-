@@ -20,3 +20,14 @@ D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApp
 D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
 D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
 D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.dll
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.pdb
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfoInputs.cache
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
