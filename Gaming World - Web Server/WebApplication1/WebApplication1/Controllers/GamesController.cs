@@ -26,8 +26,11 @@ namespace WebApplication1.Controllers
             String hardPrice = HttpContext.Request.Query["hardPrice"].ToString();
             String platform = HttpContext.Request.Query["platform"].ToString();
             String image = HttpContext.Request.Query["image"].ToString();
+            String genre = HttpContext.Request.Query["genre"].ToString();
+            String amountString = HttpContext.Request.Query["amount"].ToString();
+            int amount = Int32.Parse(amountString);
 
-            Game game = new Game(name, keyPrice, hardPrice, platform, image);
+            Game game = new Game(name, keyPrice, hardPrice, platform, image, genre, amount);
             db.Games.Add(game);
             db.SaveChanges();
 
@@ -38,13 +41,27 @@ namespace WebApplication1.Controllers
         [HttpGet("{id}", Name = "Get")]
         public IEnumerable<Game> GetGames(int id)
         {
-            return from g in db.Games select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image };
+            String platform="";
+            switch(id)
+            {
+                case 1:
+                    platform = "PC";
+                    break;
+                case 2:
+                    platform = "PS4";
+                    break;
+                case 3:
+                    platform = "Xbox One";
+                    break;
+                case 4:
+                    platform = "Switch";
+                    break;
+                case 5:
+                    return from g in db.Games select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image };
+                    //break;
+            }
 
-            //return new Game[]
-            //{
-            //    new Game{ Name = "Fifa 2007", KeyPrice = "40", HardPrice = "45", Platform = "PC", Image= "fifa06.png"},
-            //    new Game{ Name = "Fifa 2008", KeyPrice = "41", HardPrice = "45", Platform = "PS4", Image= "fifa06.png"},
-            //};
+            return from g in db.Games where g.Platform.Equals(platform) select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image };
         }
     }
 }

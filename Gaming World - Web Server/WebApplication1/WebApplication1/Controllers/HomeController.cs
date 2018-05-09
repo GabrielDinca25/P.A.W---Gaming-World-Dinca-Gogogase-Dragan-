@@ -15,7 +15,22 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public IActionResult Products()
+        public IActionResult ProductsPC()
+        {
+            return View();
+        }
+
+        public IActionResult ProductsPS()
+        {
+            return View();
+        }
+
+        public IActionResult ProductsXBOX()
+        {
+            return View();
+        }
+
+        public IActionResult ProductsSwitch()
         {
             return View();
         }

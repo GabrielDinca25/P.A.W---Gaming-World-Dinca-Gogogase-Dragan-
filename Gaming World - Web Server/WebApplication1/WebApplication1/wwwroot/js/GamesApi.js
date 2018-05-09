@@ -11,8 +11,9 @@
         });
     };
 
-    this.getAllGames = function () {
-        var allGamesReq = "/api/games/1";
+    this.getAllGames = function (id) {
+        var allGamesReq = "/api/games/" + id;
+        console.log(allGamesReq);
         return doAsyncGet(allGamesReq);
     };
 

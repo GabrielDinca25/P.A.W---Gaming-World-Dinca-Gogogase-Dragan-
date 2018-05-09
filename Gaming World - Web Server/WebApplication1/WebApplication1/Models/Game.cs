@@ -15,19 +15,22 @@ namespace WebApplication1.Models
         public String HardPrice { get; set; }
         public String Platform { get; set; }
         public String Image { get; set; }
-
+        public String Genre { get; set; }
+        public int Amount { get; set; }
 
         public Game()
         {
         }
 
-        public Game(String name, String key, String hard, String platform, String image)
+        public Game(String name, String key, String hard, String platform, String image, String genre, int amount)
         {
             Name = name;
             KeyPrice = key;
             HardPrice = hard;
             Platform = platform;
             Image = image;
+            Genre = genre;
+            Amount = amount;
         }
     }
 

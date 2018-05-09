@@ -17,7 +17,7 @@
     <script runat="server" type="text/javascript" src="~/js/GamesApi.js"></script>
     <script>
         var gamesApi = new GamesApi();
-        var games = gamesApi.getAllGames();
+        var games = gamesApi.getAllGames(3);
         games.done(
             function (response) {
                 for (var i = 0; i < response.length; i++) {
@@ -141,10 +141,10 @@
                 <div class="modal-body">
                     <form role="form">
                         <div class="form-group">
-                            <input type="firstName" class="form-control" placeholder="First Name">
+                            <input type="text" class="form-control" placeholder="First Name">
                         </div>
                         <div class="form-group">
-                            <input type="lastName" class="form-control" placeholder="Last Name">
+                            <input type="text" class="form-control" placeholder="Last Name">
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Email">
