@@ -10,7 +10,8 @@ body {
     position: absolute;
     display: inline-block;
     height: 800px;
-    border: 1px solid red;
+    margin-top: 17px;
+    margin-left: 10px;
 }
 .orangeTextLarge {
     font-size: 18px;

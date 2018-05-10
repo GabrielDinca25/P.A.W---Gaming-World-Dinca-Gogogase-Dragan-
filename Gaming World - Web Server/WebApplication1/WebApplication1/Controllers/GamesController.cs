@@ -27,8 +27,7 @@ namespace WebApplication1.Controllers
             String platform = HttpContext.Request.Query["platform"].ToString();
             String image = HttpContext.Request.Query["image"].ToString();
             String genre = HttpContext.Request.Query["genre"].ToString();
-            String amountString = HttpContext.Request.Query["amount"].ToString();
-            int amount = Int32.Parse(amountString);
+            String amount = HttpContext.Request.Query["amount"].ToString();
 
             Game game = new Game(name, keyPrice, hardPrice, platform, image, genre, amount);
             db.Games.Add(game);

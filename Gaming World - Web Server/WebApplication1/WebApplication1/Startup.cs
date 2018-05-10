@@ -32,6 +32,9 @@ namespace WebApplication1
             services.AddDbContext<UserDBContext>(options =>
                  options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<CartProductDBContext>(options =>
+                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
 
             services.AddMvc();
         }

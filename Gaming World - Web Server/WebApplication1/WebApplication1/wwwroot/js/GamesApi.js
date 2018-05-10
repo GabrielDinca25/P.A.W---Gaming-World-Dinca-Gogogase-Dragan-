@@ -17,5 +17,10 @@
         return doAsyncGet(allGamesReq);
     };
 
+    this.getGameToAdd = function (id) {
+        var gameToAddReq = "/api/cart/1";
+        return doAsyncGet(gameToAddReq);
+    };
+
     GamesApi.instance = this;
 }

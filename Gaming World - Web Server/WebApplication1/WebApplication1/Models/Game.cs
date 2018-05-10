@@ -16,13 +16,13 @@ namespace WebApplication1.Models
         public String Platform { get; set; }
         public String Image { get; set; }
         public String Genre { get; set; }
-        public int Amount { get; set; }
+        public String Amount { get; set; }
 
         public Game()
         {
         }
 
-        public Game(String name, String key, String hard, String platform, String image, String genre, int amount)
+        public Game(String name, String key, String hard, String platform, String image, String genre, String amount)
         {
             Name = name;
             KeyPrice = key;
@@ -47,6 +47,21 @@ namespace WebApplication1.Models
         }
 
         public DbSet<Game> Games { get; set; }
+    }
+
+    public class CartProductDBContext : DbContext
+    {
+        public CartProductDBContext(DbContextOptions<CartProductDBContext> options) : base(options)
+        {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Game>().ToTable("CartProduct");
+        }
+
+        public DbSet<Game> CartProducts { get; set; }
     }
 
 }

@@ -15,6 +15,24 @@
     </head>
 
     <body>
+        <script runat="server" type="text/javascript" src="~/js/GamesApi.js"></script>
+        <script>
+            var gamesApi = new GamesApi();
+            var games = gamesApi.getGameToAdd();
+            games.done(
+
+                function (response) {
+                    for (var i = 0; i < response.length; i++) {
+                        var status = "In Stock"
+                        if (response[i].amount > 0)
+                        {
+                            status = "Out of stock";
+                        }
+                        $("#cartProducts").append('<tr><td class= "col-sm-8 col-md-6" ><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="/images/' + response[i].image + '" style="width: 72px; height: 72px;"> </a><div class="media-body"><h4 class="media-heading"><a href="#">' + response[i].name + ' </a></h4><span>Status: </span>' + status + '<span><strong></strong></span></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"><span>1</span></td><td class="col-sm-1 col-md-1 text-center"><strong>$' + response[i].keyPrice + '<td class="col-sm-1 col-md-1 text-center"><strong>$' + response[i].keyPrice + '</strong></td><td class="col-sm-1 col-md-1"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Remove</button></td>');
+                    }
+                });
+        </script>
+
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -139,28 +157,8 @@
                                 <th> </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td class="col-sm-8 col-md-6">
-                                    <div class="media">
-                                        <a class="thumbnail pull-left" href="#"> <img class="media-object" runat="server" src="~/images/acorigins.png" style="width: 72px; height: 72px;"> </a>
-                                        <div class="media-body">
-                                            <h4 class="media-heading"><a href="@Url.Action("ACOrigins", "Products")">Assassin's Creed Origins</a></h4>
-                                            <span>Status: </span><span><strong>In Stock</strong></span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="col-sm-1 col-md-1" style="text-align: center">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" value="1">
-                                </td>
-                                <td class="col-sm-1 col-md-1 text-center"><strong>$ 49.90</strong></td>
-                                <td class="col-sm-1 col-md-1 text-center"><strong>$ 49.00</strong></td>
-                                <td class="col-sm-1 col-md-1">
-                                    <button type="button" class="btn btn-danger">
-                                        <span class="glyphicon glyphicon-remove"></span> Remove
-                                    </button>
-                                </td>
-                            </tr>
+                        <tbody id="cartProducts">
+
 
                         </tbody>
                         <tfoot>
