@@ -32,59 +32,30 @@
                 </form>
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            PC
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Products", "Home")">All games</a></li>
-                            <li><a href="#">Games on discount</a></li>
-                            <li><a href="#">On stock</a></li>
-                        </ul>
+                        <a href="@Url.Action("ProductsPC", "Home")">PC</a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            PS4
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">All games</a></li>
-                            <li><a href="#">Games on discount</a></li>
-                            <li><a href="#">On stock</a></li>
-                        </ul>
+                        <a href="@Url.Action("ProductsPS", "Home")">PS4</a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Xbox ONE
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">All games</a></li>
-                            <li><a href="#">Games on discount</a></li>
-                            <li><a href="#">On stock</a></li>
-                        </ul>
+                        <a href="@Url.Action("ProductsXbox", "Home")">XBOX One</a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Nintendo Switch
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">All games</a></li>
-                            <li><a href="#">Games on discount</a></li>
-                            <li><a href="#">On stock</a></li>
-                        </ul>
+                        <a href="@Url.Action("ProductsSwitch", "Home")">Nintendo Switch</a>
                     </li>
                 </ul>
                 <div class="navbarbuttons">
                     <form>
-                        <a class="btn btn-warning" href="@Url.Action("ShoppingCart", "Home")"><i class="glyphicon glyphicon-shopping-cart"></i></a>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Login">Login</button>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Register">Register</button>
+                        <a class="btn btn-warning" href="@Url.Action("ShoppingCart", "Home")"> <i class="glyphicon glyphicon-shopping-cart gi-2x"></i></a>
+                        <a class="btn btn-warning" href="@Url.Action("Admin", "Home")"> <i class="glyphicon glyphicon-cog"></i></a>
+
                     </form>
                 </div>
             </div>
         </nav>
+
 
         <div class="modal" id="Login" role="dialog">
             <div class="modal-dialog">

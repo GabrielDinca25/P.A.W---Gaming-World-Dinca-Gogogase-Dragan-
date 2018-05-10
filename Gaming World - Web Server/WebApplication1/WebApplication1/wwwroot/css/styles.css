@@ -7,8 +7,10 @@ body {
     display: inline-block;
 }
 #productGrid {
+    position: absolute;
     display: inline-block;
-    height:800px;
+    height: 800px;
+    border: 1px solid red;
 }
 .orangeTextLarge {
     font-size: 18px;
@@ -103,8 +105,11 @@ div.footerdiv{
     color: #9d9d9d;
 }
 
-.main-section{
+
+
+.main-section {
     padding: 20px 20px 0px 20px;
+    display: inline-block;
 }
 .image-main-section{
     margin-bottom:20px;
