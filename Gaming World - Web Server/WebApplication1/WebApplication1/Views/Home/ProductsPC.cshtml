@@ -43,48 +43,16 @@
             </form>
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        PC
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="@Url.Action("Products", "Home")">All games</a></li>
-                        <li><a href="#">Games on discount</a></li>
-                        <li><a href="#">On stock</a></li>
-                    </ul>
+                    <a href="@Url.Action("ProductsPC", "Home")">PC</a>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        PS4
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">All games</a></li>
-                        <li><a href="#">Games on discount</a></li>
-                        <li><a href="#">On stock</a></li>
-                    </ul>
+                    <a href="@Url.Action("ProductsPS", "Home")">PS4</a>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Xbox ONE
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">All games</a></li>
-                        <li><a href="#">Games on discount</a></li>
-                        <li><a href="#">On stock</a></li>
-                    </ul>
+                    <a href="@Url.Action("ProductsXbox", "Home")">XBOX One</a>
                 </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Nintendo Switch
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">All games</a></li>
-                        <li><a href="#">Games on discount</a></li>
-                        <li><a href="#">On stock</a></li>
-                    </ul>
+                    <a href="@Url.Action("ProductsSwitch", "Home")">Nintendo Switch</a>
                 </li>
             </ul>
             <div class="navbarbuttons">
@@ -165,6 +133,95 @@
             </div>
         </div>
     </div>
+
+    <div id="main">
+        <div class="checkBlockLeft" id="checkBlock">
+            <h1 class="orangeTextLarge">Platform:</h1>
+            <label>
+                <input type="checkbox">
+                <span>PC</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>PlayStation 4</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Xbox One</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Nintendo Switch</span>
+            </label>
+
+            <h1 class="orangeTextLarge">Stile:</h1>
+            <label>
+                <input type="checkbox">
+                <span>Action</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Adventure</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Arcade</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Strategy</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Sport</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Fighting</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Racing</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Logical</span>
+            </label>
+
+            <h1 class="orangeTextLarge">Available:</h1>
+            <label>
+                <input type="checkbox">
+                <span>In stoc</span>
+            </label>
+
+            <h1 class="orangeTextLarge">Price:</h1>
+            <label>
+                <input type="checkbox">
+                <span>50</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>50-100</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>100-250</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>250-500</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>500</span>
+            </label>
+        </div>
+
+        <div id="productGrid">
+
+        </div>
+    </div>
+
 
     <div id="productGrid">
     </div>

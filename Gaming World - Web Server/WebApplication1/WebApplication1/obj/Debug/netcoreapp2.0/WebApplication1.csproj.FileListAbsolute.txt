@@ -42,3 +42,14 @@ C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1
 C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
 C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
 C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojResolveAssemblyReference.cache
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csproj.CoreCompileInputs.cache
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfoInputs.cache
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
