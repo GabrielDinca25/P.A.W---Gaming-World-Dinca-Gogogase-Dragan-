@@ -56,11 +56,11 @@ namespace WebApplication1.Controllers
                     platform = "Switch";
                     break;
                 case 5:
-                    return from g in db.Games select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image };
+                    return from g in db.Games select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image, Genre=g.Genre, Amount=g.Amount};
                     //break;
             }
 
-            return from g in db.Games where g.Platform.Equals(platform) select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image };
+            return from g in db.Games where g.Platform.Equals(platform) select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image, Genre = g.Genre, Amount = g.Amount };
         }
     }
 }
