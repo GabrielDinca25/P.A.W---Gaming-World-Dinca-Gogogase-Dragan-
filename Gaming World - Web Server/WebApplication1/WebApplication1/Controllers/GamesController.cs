@@ -18,6 +18,14 @@ namespace WebApplication1.Controllers
             this.db = db;
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Post([FromForm] Game gameToAdd)
+        {
+            await db.Games.AddAsync(gameToAdd);
+            db.SaveChanges();
+            return RedirectToAction("Admin", ControllerName);
+        }
+           
         [HttpGet]
         public IActionResult AddGameToDatabase()
         {

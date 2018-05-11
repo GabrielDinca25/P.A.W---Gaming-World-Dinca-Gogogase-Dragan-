@@ -13126,28 +13126,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gogoa\\.nuget\\packages\\": {},
+    "C:\\Users\\Gabriel\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "D:\\Programe\\GitRepository\\Proiect P.A.W\\Gaming World - Web Server\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "D:\\Scoala\\P.A.W. - Gaming World\\Gaming World - Web Server\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "D:\\Programe\\GitRepository\\Proiect P.A.W\\Gaming World - Web Server\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\gogoa\\.nuget\\packages\\",
-      "outputPath": "D:\\Programe\\GitRepository\\Proiect P.A.W\\Gaming World - Web Server\\WebApplication1\\WebApplication1\\obj\\",
+      "projectPath": "D:\\Scoala\\P.A.W. - Gaming World\\Gaming World - Web Server\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+      "outputPath": "D:\\Scoala\\P.A.W. - Gaming World\\Gaming World - Web Server\\WebApplication1\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\gogoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],

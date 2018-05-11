@@ -24,13 +24,12 @@ namespace WebApplication1.Controllers
         {
             String gameName = HttpContext.Request.Query["gameName"].ToString();
 
-            var currentGame = from g in db.Games
-                               where g.Name.Equals(gameName)
-                               select new Game(g.Name, g.KeyPrice, g.HardPrice, g.Platform, g.Image, g.Genre, g.Amount);
-
-            foreach(Game game in currentGame)
-            {
-                cart_db.CartProducts.Add(game);
+            var currentGame = db.Games
+                               .Where(game => game.Name.Equals(gameName))
+                               .FirstOrDefault(); 
+            if (currentGame != null)
+            { 
+                cart_db.CartProducts.Add(currentGame);
                 cart_db.SaveChanges();
             }
 
@@ -40,7 +39,8 @@ namespace WebApplication1.Controllers
         [HttpGet("{id}", Name = "Add")]
         public IEnumerable<Game> Add(int id)
         {
-            return from g in cart_db.CartProducts select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image };
+            return cart_db.CartProducts.AsEnumerable();
+            //return from g in cart_db.CartProducts select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image };
         }
     }
 }
