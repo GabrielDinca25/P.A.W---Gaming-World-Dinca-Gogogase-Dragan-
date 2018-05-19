@@ -22,9 +22,6 @@ namespace WebApplication1.Controllers
         [HttpPost]
         [ActionName("Login")]
         public ActionResult Login([FromForm] String email, [FromForm]String password)
-        [HttpGet]
-        [ActionName("Login")]
-        public ActionResult Login()
         {
            // String email = HttpContext.Request.Query["email"].ToString();
            // String password = HttpContext.Request.Query["password"].ToString();

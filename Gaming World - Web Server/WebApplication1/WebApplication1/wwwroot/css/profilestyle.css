@@ -1,22 +1,42 @@
 @import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
 
-body.div {
-    position: relative;
+
+html, body {
+    font-family: 'Open Sans';
+    height: 100%;
+    background-color: rgb(68, 68, 68);
 }
 
-ul.nav-pills {
-    top: 45px;
-    position: fixed;
-    padding:10px 0 10px 10px;
-    float:left;
-}
-div.col-8 div {
-    height: 500px;
+
+.content {
+    /*width: auto;
+    background: #848c8d;
+    margin-left: 50px;
+    padding: 15px;*/
+    margin-top: 0px;
+    background: rgb(68, 68, 68);
 }
 
-li.nav-item
-{
-    float:left;
-    width:285px;
-   
+    .content h1 {
+        color: white /*#424242*/;
+        font-size: 0.8em;
+    }
+
+div#box {
+    margin-top: 15px;
 }
+
+    div#box .box-top {
+        color: #fff;
+        text-shadow: 0 1px #000;
+        background: #11171b;
+        padding: 5px;
+        padding-left: 15px;
+        font-weight: 500;
+    }
+
+    div#box .box-panel {
+        padding: 15px;
+        background: rgb(68, 68, 68);
+        color: antiquewhite /*#333*/;
+    }

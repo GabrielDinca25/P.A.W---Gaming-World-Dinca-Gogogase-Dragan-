@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
-
+<html>
 <head>
 
     <title>Profile</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link runat="server" href="~/css/profilestyle.css" rel="stylesheet">
+    @*<link runat="server" href="~/css/profilestyle.css" rel="stylesheet">*@
     <link runat="server" href="~/css/styles.css" rel="stylesheet">
     <link runat="server" rel="stylesheet" href="~/css/ionicons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -87,92 +87,68 @@
     </nav>
 
 
-    <div data-spy="scroll" data-target="#myScrollspy" data-offset="1">
 
-        <div class="container-fluid">
-            <div class="row">
-                <nav class="col-sm-3 col-4" id="myScrollspy">
-                    <ul class="nav nav-pills flex-column">
-                        <li class="nav-item">
-                            <div>
-                                <a class="nav-link active" href="#section1"><i class="ion-person"></i>Date personale</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div>
-                                <a class="nav-link" href="#section2"><i class="ion-ios-cart"></i>Comenzile mele</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div>
-                                <a class="nav-link" href="#section3"><i class="ion-ios-reload"></i>Retur </a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div>
-                                <a class="nav-link" href="#section4"><i></i></a>
-                            </div>
-                        </li>
+    <div class="content" style=" margin-top: 0px; background: rgb(68, 68, 68);">
+        <h1 style="color: white; font-size: 35px; padding-left: 15px;">Profile</h1>
 
-                    </ul>
-                </nav>
-                <div class="col-sm-9 col-8">
-                    <div id="section1" class="bg-success">
-                        <h1><i class="ion-person"></i>My profile</h1>
-                        <p><i class="ion-ios-person-outline"></i>Last Name: Popescu</p>
-                        <p><i class="ion-ios-person-outline"></i>First Name: Ioan</p>
-                        <p><i class="ion-ios-email-outline"></i>Email: popescu@gmail</p>
-                        <p><i class="ion-ios-home-outline"></i>Address:</p>
-                        <p><i class="ion-ios-telephone-outline"></i>Phone:</p>
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ActualizareDate">Actualizare date</button>
-
-
-
-                    </div>
-                    <div id="section2" class="bg-warning">
-                        <h1><i class="ion-clipboard"></i>Istoric comenzi</h1>
-                        <p>...</p>
-                    </div>
-
-                    <div id="section3" class="bg-warning">
-                        <h1><i class="ion-ios-reload"></i>Informatii de retur</h1>
-                        <p>Conditii de retur:</p>
-                        <p>Produsele pe care le returnezi trebuie să fie în aceeași stare în care le-ai primit.</p>
-                        <p>Nu se acceptă produsele asupra cărora au fost efectuate intervenții neautorizate, cele care prezintă urme de uzură sau folosire excesivă, zgârieturi, ciobituri, lovituri, șocuri mecanice / electrice, produsele cărora le lipsesc accesorii.</p>
-                        <p>Returul se face în ambalajul original, cu etichetele inițiale intacte, certificatul de garanție în original (dacă a fost emis de producător/ distribuitor) și toate documentele cu care a fost livrat produsul.</p>
-                        <p>Dacă ai cumpărat mai multe produse de același fel și vrei să le returnezi pe toate, asigură-te că doar unul a fost desigilat. Returul celorlaltor produse se acceptă doar dacă sunt sigilate.</p>
-                        <p>Returul se efectuează în maxim 20 de zile de la primirea coletului.</p>
-                        <p>Pentru a efectua un retur, vă rugăm sunați la unul din numerele: 0760000000 / 0740000000.</p>
-                        <p>Vă mulțumim de înțelegere!<i class="ion-happy-outline"></i></p>
-                        <p></p>
-                    </div>
-
-
-                    <div id="section4" class="bg-secondary">
-                        <h1><i class="ion-information-circled"></i>Info</h1>
-                        <h2>Comand online:</h2>
-                        <p>Cauta produsul dorit: poti cauta un produs direct in campul special de cautare sau navigand in categoriile de produse direct din meniul afisat in stanga.</p>
-                        <p>Adauga produsele dorite in cosul de cumparaturi prin selectarea butonului “Adauga in cos.”</p>
-                        <p>Poti adauga in cos mai multe produse, din categorii diferite.</p>
-
-                        <h2>Verifica comanda:</h2>
-                        <p>Dupa adaugarea fiecarui produs, poti merge in cosul de cumparaturi, aici poti sa revezi lista produselor selectate, sa actualizezi cantitatea sau sa renunti la unul sau toate produsele selectate.</p>
-
-                        <h2>Detalii de facturare si livrare comanda</h2>
-                        <p>Dupa adaugarea produselor dorite in cos, trebuie sa selectezi detaliile de facturare si metoda de plata dorita(ramburs/card bancar).</p>
-
-                        <h2>Salvarea datelor</h2>
-                        <p>Datele se salveaza la inregistrare si la plasarea unei comenzi.Insa iti poti modifica datele personale in orice moment accesand sectiunea Date personale din Profilul tau.</p>
-
-                    </div>
-
-
-                </div>
+        <div id="box" style="margin-top: 15px;">
+            <div class="box-top" style=" color: #fff;text-shadow: 0 1px #000;background: #11171b;padding: 5px;padding-left: 15px;font-weight: 650;">
+            My profile</div>
+            <div class="box-panel" style=" padding: 15px;background: rgb(68, 68, 68);color: antiquewhite;">
+                <p><i class="ion-ios-person-outline"></i>Last Name: Popescu</p>
+                <p><i class="ion-ios-person-outline"></i>First Name: Ioan</p>
+                <p><i class="ion-ios-email-outline"></i>Email: popescu@gmail</p>
+                <p><i class="ion-ios-home-outline"></i>Address:</p>
+                <p><i class="ion-ios-telephone-outline"></i>Phone:</p>
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ActualizareDate">Actualizare date</button>
             </div>
         </div>
+
+        <div id="box" style="margin-top: 15px;">
+            <div class="box-top" style=" color: #fff;text-shadow: 0 1px #000;background: #11171b; padding: 5px; padding-left: 15px;font-weight: 650;">
+            Istoric comenzi</div>
+            <div class="box-panel" style=" padding: 15px;background: rgb(68, 68, 68);color: antiquewhite;">
+            ....</div>
+        </div>
+
+
+        <div id="box" style="margin-top: 15px;">
+            <div class="box-top" style=" color: #fff;text-shadow: 0 1px #000;background: #11171b; padding: 5px; padding-left: 15px;font-weight: 650;">
+            Conditii de retur</div>
+            <div class="box-panel" style=" padding: 15px;background: rgb(68, 68, 68);color: antiquewhite;">
+                <p>Produsele pe care le returnezi trebuie să fie în aceeași stare în care le-ai primit.</p>
+                <p>Nu se acceptă produsele asupra cărora au fost efectuate intervenții neautorizate, cele care prezintă urme de uzură sau folosire excesivă, zgârieturi, ciobituri, lovituri, șocuri mecanice / electrice, produsele cărora le lipsesc accesorii.</p>
+                <p>Returul se face în ambalajul original, cu etichetele inițiale intacte, certificatul de garanție în original (dacă a fost emis de producător/ distribuitor) și toate documentele cu care a fost livrat produsul.</p>
+                <p>Dacă ai cumpărat mai multe produse de același fel și vrei să le returnezi pe toate, asigură-te că doar unul a fost desigilat. Returul celorlaltor produse se acceptă doar dacă sunt sigilate.</p>
+                <p>Returul se efectuează în maxim 20 de zile de la primirea coletului.</p>
+                <p>Pentru a efectua un retur, vă rugăm sunați la unul din numerele: 0760000000 / 0740000000.</p>
+                <p>Vă mulțumim de înțelegere!<i class="ion-happy-outline"></i></p>
+                <p></p>
+            </div>
+        </div>
+
+        <div id="box" style="margin-top: 15px;">
+            <div class="box-top" style=" color: #fff;text-shadow: 0 1px #000;background: #11171b; padding: 5px; padding-left: 15px;font-weight: 650;">
+            Info</div>
+            <div class="box-panel" style=" padding: 15px;background: rgb(68, 68, 68);color: antiquewhite;">
+                <p>Comand online:</p>
+                <p>Cauta produsul dorit: poti cauta un produs direct in campul special de cautare sau navigand in categoriile de produse direct din meniul afisat in stanga.</p>
+                <p>Adauga produsele dorite in cosul de cumparaturi prin selectarea butonului “Adauga in cos.”</p>
+                <p>Poti adauga in cos mai multe produse, din categorii diferite.</p>
+
+                <p>Verifica comanda:</p>
+                <p>Dupa adaugarea fiecarui produs, poti merge in cosul de cumparaturi, aici poti sa revezi lista produselor selectate, sa actualizezi cantitatea sau sa renunti la unul sau toate produsele selectate.</p>
+
+                <p>Detalii de facturare si livrare comanda:</p>
+                <p>Dupa adaugarea produselor dorite in cos, trebuie sa selectezi detaliile de facturare si metoda de plata dorita(ramburs/card bancar).</p>
+
+                <p>Salvarea datelor:</p>
+                <p>Datele se salveaza la inregistrare si la plasarea unei comenzi.Insa iti poti modifica datele personale in orice moment accesand sectiunea Date personale din Profilul tau.</p>
+
+            </div>
+        </div>
+
     </div>
-
-
 
     <div class="modal" id="ActualizareDate" role="dialog">
         <div class="modal-dialog">
@@ -213,7 +189,6 @@
             </div>
         </div>
     </div>
-
 
     <footer>
         <label>
