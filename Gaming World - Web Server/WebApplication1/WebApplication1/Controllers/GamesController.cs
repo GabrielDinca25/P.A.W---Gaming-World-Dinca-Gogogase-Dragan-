@@ -7,7 +7,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class GamesController : Controller
     {
         private const string ControllerName = "Home";
@@ -18,38 +18,23 @@ namespace WebApplication1.Controllers
             this.db = db;
         }
 
+
         [HttpPost]
-        public async Task<IActionResult> Post([FromForm] Game gameToAdd)
+        [ActionName("AddGame")]
+        public async Task<IActionResult> AddGame([FromForm] Game gameToAdd)
         {
             await db.Games.AddAsync(gameToAdd);
             db.SaveChanges();
             return RedirectToAction("Admin", ControllerName);
         }
-           
-        [HttpGet]
-        public IActionResult AddGameToDatabase()
-        {
-            String name = HttpContext.Request.Query["name"].ToString();
-            String keyPrice = HttpContext.Request.Query["keyPrice"].ToString();
-            String hardPrice = HttpContext.Request.Query["hardPrice"].ToString();
-            String platform = HttpContext.Request.Query["platform"].ToString();
-            String image = HttpContext.Request.Query["image"].ToString();
-            String genre = HttpContext.Request.Query["genre"].ToString();
-            String amount = HttpContext.Request.Query["amount"].ToString();
 
-            Game game = new Game(name, keyPrice, hardPrice, platform, image, genre, amount);
-            db.Games.Add(game);
-            db.SaveChanges();
-
-            return RedirectToAction("Admin", ControllerName);
-
-        }
 
         [HttpGet("{id}", Name = "Get")]
+        [ActionName("GetGames")]
         public IEnumerable<Game> GetGames(int id)
         {
-            String platform="";
-            switch(id)
+            String platform = "";
+            switch (id)
             {
                 case 1:
                     platform = "PC";
@@ -64,11 +49,19 @@ namespace WebApplication1.Controllers
                     platform = "Switch";
                     break;
                 case 5:
-                    return from g in db.Games select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image, Genre=g.Genre, Amount=g.Amount};
+                    return db.Games.AsEnumerable();
                     //break;
             }
 
-            return from g in db.Games where g.Platform.Equals(platform) select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image, Genre = g.Genre, Amount = g.Amount };
+            return db.Games.Where(g => g.Platform.Equals(platform)).AsEnumerable();
+        }
+
+        [HttpGet]
+        [ActionName("GetSearchResults")]
+        public IEnumerable<Game> GetSearchResults()
+        {
+            String searchTerm = HttpContext.Request.Query["search"].ToString();
+            return db.Games.Where(g => g.Name.Contains(searchTerm)).AsEnumerable();
         }
     }
 }
