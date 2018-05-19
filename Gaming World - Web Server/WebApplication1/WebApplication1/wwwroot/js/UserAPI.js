@@ -21,5 +21,10 @@
         return doAsyncGet(getAllUsers);
     }
 
+    this.getUserInfo = function () {
+        var getUserInfo = '/api/login/GetUserInfo'
+        return doAsyncGet(getUserInfo);
+    }
+
     UserAPI.instance = this;
 }
