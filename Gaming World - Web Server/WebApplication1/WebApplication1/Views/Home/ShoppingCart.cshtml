@@ -15,24 +15,6 @@
     </head>
 
     <body>
-        <script runat="server" type="text/javascript" src="~/js/GamesApi.js"></script>
-        <script>
-            var gamesApi = new GamesApi();
-            var games = gamesApi.getGameToAdd();
-            games.done(
-
-                function (response) {
-                    for (var i = 0; i < response.length; i++) {
-                        var status = "In Stock"
-                        if (response[i].amount > 0)
-                        {
-                            status = "Out of stock";
-                        }
-                        $("#cartProducts").append('<tr><td class= "col-sm-8 col-md-6" ><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="/images/' + response[i].image + '" style="width: 72px; height: 72px;"> </a><div class="media-body"><h4 class="media-heading"><a href="#">' + response[i].name + ' </a></h4><span>Status: </span>' + status + '<span><strong></strong></span></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"><span>1</span></td><td class="col-sm-1 col-md-1 text-center"><strong>$' + response[i].keyPrice + '<td class="col-sm-1 col-md-1 text-center"><strong>$' + response[i].keyPrice + '</strong></td><td class="col-sm-1 col-md-1"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Remove</button></td>');
-                    }
-                });
-        </script>
-
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -50,30 +32,59 @@
                 </form>
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="@Url.Action("ProductsPC", "Home")">PC</a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            PC
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Products", "Home")">All games</a></li>
+                            <li><a href="#">Games on discount</a></li>
+                            <li><a href="#">On stock</a></li>
+                        </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="@Url.Action("ProductsPS", "Home")">PS4</a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            PS4
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">All games</a></li>
+                            <li><a href="#">Games on discount</a></li>
+                            <li><a href="#">On stock</a></li>
+                        </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="@Url.Action("ProductsXbox", "Home")">XBOX One</a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Xbox ONE
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">All games</a></li>
+                            <li><a href="#">Games on discount</a></li>
+                            <li><a href="#">On stock</a></li>
+                        </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="@Url.Action("ProductsSwitch", "Home")">Nintendo Switch</a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Nintendo Switch
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">All games</a></li>
+                            <li><a href="#">Games on discount</a></li>
+                            <li><a href="#">On stock</a></li>
+                        </ul>
                     </li>
                 </ul>
                 <div class="navbarbuttons">
                     <form>
+                        <a class="btn btn-warning" href="@Url.Action("ShoppingCart", "Home")"><i class="glyphicon glyphicon-shopping-cart"></i></a>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Login">Login</button>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Register">Register</button>
-                        <a class="btn btn-warning" href="@Url.Action("ShoppingCart", "Home")"> <i class="glyphicon glyphicon-shopping-cart gi-2x"></i></a>
-                        <a class="btn btn-warning" href="@Url.Action("Admin", "Home")"> <i class="glyphicon glyphicon-cog"></i></a>
-
                     </form>
                 </div>
             </div>
         </nav>
-
 
         <div class="modal" id="Login" role="dialog">
             <div class="modal-dialog">
@@ -147,9 +158,9 @@
         <div class="container" style="color: white;">
             <div class="row">
                 <div class="col-sm-12 col-md-10 col-md-offset-1">
-                    <table style="color:white" class="table">
+                    <table class="table">
                         <thead>
-                            <tr style="color:white">>
+                            <tr>
                                 <th>Product</th>
                                 <th>Quantity</th>
                                 <th class="text-center">Price</th>
@@ -157,8 +168,28 @@
                                 <th> </th>
                             </tr>
                         </thead>
-                        <tbody id="cartProducts">
-
+                        <tbody>
+                            <tr>
+                                <td class="col-sm-8 col-md-6">
+                                    <div class="media">
+                                        <a class="thumbnail pull-left" href="#"> <img class="media-object" runat="server" src="~/images/acorigins.png" style="width: 72px; height: 72px;"> </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading"><a href="@Url.Action("ACOrigins", "Products")">Assassin's Creed Origins</a></h4>
+                                            <span>Status: </span><span><strong>In Stock</strong></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-sm-1 col-md-1" style="text-align: center">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" value="1">
+                                </td>
+                                <td class="col-sm-1 col-md-1 text-center"><strong>$ 49.90</strong></td>
+                                <td class="col-sm-1 col-md-1 text-center"><strong>$ 49.00</strong></td>
+                                <td class="col-sm-1 col-md-1">
+                                    <button type="button" class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-remove"></span> Remove
+                                    </button>
+                                </td>
+                            </tr>
 
                         </tbody>
                         <tfoot>
@@ -167,7 +198,7 @@
                                 <td>   </td>
                                 <td>   </td>
                                 <td><h5>Subtotal<br>Estimated shipping</h5><h3>Total</h3></td>
-                                <td  class="text-right"><h5><strong>$ 49.90<br>$ 0.00</strong></h5><h3>$ 49.90</h3></td>
+                                <td class="text-right"><h5><strong>$ 49.90<br>$ 0.00</strong></h5><h3>$ 49.90</h3></td>
                             </tr>
                             <tr>
                                 <td>   </td>

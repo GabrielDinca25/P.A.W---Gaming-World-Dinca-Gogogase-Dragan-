@@ -2,12 +2,10 @@
 
 <html>
 <head>
-
     <meta charset="UTF-8">
     <title>Admin Panel </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link runat="server" rel="stylesheet" href="~/css/adminstyle.css">
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -15,26 +13,31 @@
 
 </head>
 
+
 <body>
 
     <div id="header">
         <div class="logo">
             <a href="@Url.Action("Admin", "Home")">Admin<span> Panel</span></a>
         </div>
+
     </div>
 
+
     <a class="menu">MENU</a>
+
 
     <div id="container">
 
         <div class="sidebar">
             <ul id="nav">
-                <li><a href="@Url.Action("Index", "Home")"><i class="ion-home"></i>   Home</a></li>
+                <li><a href="#"><i class="ion-home"></i>   Home</a></li>
                 <li><a href="#"><i class="ion-document"></i>   Pages</a></li>
                 <li>
                     <a href="#"><i class="ion-playstation"></i> Games</a>
                 </li>
             </ul>
+
         </div>
 
         <div class="content">
@@ -47,63 +50,35 @@
 
             <div id="box">
                 <div class="box-top">Games </div>
-                <div class="box-panel"><button class="btn btn-warning" data-toggle="modal" data-target="#AddProduct"><i class="glyphicon glyphicon-plus"></i> Add Product</button></div>
+                <div class="box-panel">...</div>
             </div>
 
-            <div class="modal" id="AddProduct" role="dialog">
-                <div class="modal-dialog">
 
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Add Product</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="http://localhost:50209/api/games/AddGame" method="post">
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Enter the name of the game" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="keyPrice" class="form-control"  placeholder="Enter the price of the activation key" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="hardPrice" class="form-control" placeholder="Enter the price of the hard-case game" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="platform" class="form-control" placeholder="Enter the platform of the game" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="image" class="form-control"  placeholder="Enter the name of the image" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="genre" class="form-control" placeholder="Enter the genre of the game" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="amount" class="form-control" placeholder="Enter the ammount of games" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-warning" value="Add Product" />
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+            <div id="box">
+                <div class="box-top">Reviews</div>
+                <div class="box-panel">...</div>
             </div>
-                        <div id="box">
-                            <div class="box-top">Reviews</div>
-                            <div class="box-panel">...</div>
-                        </div>
 
-                    </div>
 
-                </div>
-                <!-- #container -->
-                <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        </div>
 
-                <script src="js/index.js"></script>
+
+    </div>
+    <!-- #container -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script src="js/index.js"></script>
+
+
+
+
+
 
 </body>
+
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+
+
+<script src="js/index.js"></script>
 </html>
