@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+
+<head>
+
+    <title>Gaming World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link runat="server" href="~/css/styles.css" rel="stylesheet">
+    <link runat="server" rel="stylesheet" href="~/css/ionicons.min.css">
+
+</head>
+
+<body>
+    <script runat="server" type="text/javascript" src="~/js/GamesApi.js"></script>
+    <script>
+        var gamesApi = new GamesApi();
+        var games = gamesApi.getAllGames(4);
+        games.done(
+            function (response) {
+                for (var i = 0; i < response.length; i++) {
+                    $("#productGrid").append('<div style="display: inline-block; padding-right:10px;" class="image-main-section"><form action="http://localhost:50209/api/cart" method="get"><div class="img-part"><div class="img-section"><img src="/images/' + response[i].image + '"></div><div class="image-title"><h3><a class="styleless-link" href="">' + response[i].name + '</a></h3></div><div><input type="hidden" readonly name="gameName" value="' + response[i].name + '"></div> <div class="image-description"><p>$' + response[i].keyPrice + '</p></div><div><input type="submit" class="btn btn-warning add-cart-btn" value="ADD TO CART"></div></form></div>');
+                }
+            });
+    </script>
+
+    <script runat="server" src="~/js/UserAPI.js"></script>
+    <script>
+        var userManager = new UserAPI();
+        var user = userManager.getSignedInUser();
+        user.done(
+            function (response) {
+                if (response[0].email != null) {
+                    email = response[0].email;
+                    $('#loggedInUser').html("");
+                    $('#loggedInUser').append(email);
+                    if (email.startsWith("admin")) {
+                        var adminPanelButton = document.getElementById("adminPanelButton");
+                        adminPanelButton.style.display = "inline-block";
+                    }
+                    else {
+                        var adminPanelButton = document.getElementById("adminPanelButton");
+                        adminPanelButton.style.display = "none";
+                    }
+                    var loginButton = document.getElementById("loginButton");
+                    loginButton.style.display = "none";
+                    var registerButton = document.getElementById("registerButton");
+                    registerButton.style.display = "none";
+                    var logOutButton = document.getElementById("logOutButton");
+                    logOutButton.style.display = "inline-block";
+                    var shoppingCartButton = document.getElementById("shoppingCartButton");
+                    shoppingCartButton.style.display = "inline-block";
+                } else {
+                    var adminPanelButton = document.getElementById("adminPanelButton");
+                    adminPanelButton.style.display = "none";
+                    var loggedInUserButton = document.getElementById("loggedInUserButton");
+                    loggedInUserButton.style.display = "none";
+                    var loginButton = document.getElementById("loginButton");
+                    loginButton.style.display = "inline-block";
+                    var registerButton = document.getElementById("registerButton");
+                    registerButton.style.display = "inline-block";
+                    var logOutButton = document.getElementById("logOutButton");
+                    logOutButton.style.display = "none";
+                    var shoppingCartButton = document.getElementById("shoppingCartButton");
+                    shoppingCartButton.style.display = "none";
+
+                }
+            });
+    </script>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">Gaming World</a>
+            </div>
+            <form class="navbar-form navbar-left" action="http://localhost:50209/api/games/GetSearchResults" method="get">
+                <div class="input-group">
+                    <input type="text" id="searchBar" class="form-control" placeholder="Search" name="search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit" onclick="displaySearchResults(document.getElementById('searchBar').value)">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="@Url.Action("ProductsPC", "Home")">PC</a>
+                </li>
+                <li class="dropdown">
+                    <a href="@Url.Action("ProductsPS", "Home")">PS4</a>
+                </li>
+                <li class="dropdown">
+                    <a href="@Url.Action("ProductsXbox", "Home")">XBOX One</a>
+                </li>
+                <li class="dropdown">
+                    <a href="@Url.Action("ProductsSwitch", "Home")">Nintendo Switch</a>
+                </li>
+            </ul>
+            <div class="navbarbuttons">
+                <form>
+                    <button type="button" id="loginButton" class="btn btn-warning" data-toggle="modal" data-target="#Login">Login</button>
+                    <button type="button" id="registerButton" class="btn btn-warning" data-toggle="modal" data-target="#Register">Register</button>
+                    <a href="@Url.Action("Profile", "Home" )" id="loggedInUserButton" class="btn btn-info"><span class="glyphicon glyphicon-user"></span><span id="loggedInUser"></span></a>
+                    <a href="@Url.Action("LogOut", "Login")" id="logOutButton" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span> Log out</a>
+                    <a class="btn btn-warning" href="@Url.Action("ShoppingCart", "Home")" id="shoppingCartButton"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    <a class="btn btn-warning" id="adminPanelButton" href="@Url.Action("Admin", "Home")"> <i class="glyphicon glyphicon-cog"></i></a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal" id="Login" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form role="form" action="http://localhost:50209/api/login/Login" method="post">
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-warning" value="Login">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="Register" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form role="form" action="http://localhost:50209/api/register/Get" method="get">
+                        <div class="form-group">
+                            <input type="text" name="firstName" class="form-control" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lastName" class="form-control" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="confirmedPassword" class="form-control" placeholder="Confirm Password">
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-warning" value="Register">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="checkBlockLeft" id="checkBlock">
+            <h1 class="orangeTextLarge">Platform:</h1>
+            <label>
+                <input type="checkbox">
+                <span>PC</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>PlayStation 4</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Xbox One</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Nintendo Switch</span>
+            </label>
+
+            <h1 class="orangeTextLarge">Stile:</h1>
+            <label>
+                <input type="checkbox" onclick="handleClick(this)" name="Action">
+                <span>Action</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Adventure</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Arcade</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Strategy</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Sport</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Fighting</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Racing</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>Logical</span>
+            </label>
+
+            <h1 class="orangeTextLarge">Available:</h1>
+            <label>
+                <input type="checkbox">
+                <span>In stoc</span>
+            </label>
+
+            <h1 class="orangeTextLarge">Price:</h1>
+            <label>
+                <input type="checkbox">
+                <span>50</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>50-100</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>100-250</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>250-500</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span>500</span>
+            </label>
+        </div>
+
+        <div id="productGrid">
+
+        </div>
+    </div>
+
+    <div id="productGrid">
+    </div>
+
+
+
+
+
+    <footer>
+        <label>
+            <div class="footer">
+                <div class="footerdiv">
+                    <h1 class="orangeTextLarge">Info</h1>
+                    <p>Pozele de pe site au rol ilustrativ.</p>
+                    <p>Produsele reale pot diferi!</p>
+                    <p>Ne rezervăm dreptul de a schimba prețurile, dacă este cazul!</p>
+                </div>
+                <div class="footerdiv">
+                    <h1 class="orangeTextLarge">Contact</h1>
+                    <p>Pe parcursul saptamanii intre orele 09:00-17:00</p>
+                    <p>Telefon:07600000</p>
+                    <p>Email:<a href="gamingworld@gmail.com">gamingworld@gmail.com</a></p>
+                </div>
+            </div>
+        </label>
+    </footer>
+
+</body>

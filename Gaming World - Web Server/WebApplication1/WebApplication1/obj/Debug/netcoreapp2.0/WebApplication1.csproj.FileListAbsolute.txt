@@ -1,0 +1,66 @@
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojResolveAssemblyReference.cache
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csproj.CoreCompileInputs.cache
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfoInputs.cache
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Scoala\I.P. - Tema 3\EuropaPeaceServer\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojResolveAssemblyReference.cache
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csproj.CoreCompileInputs.cache
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfoInputs.cache
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Scoala\P.A.W. - Gaming World\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.dll
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.pdb
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfoInputs.cache
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
+C:\Users\gogoa\Desktop\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
+C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
+C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
+C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
+C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.dll
+C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.pdb
+C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfoInputs.cache
+C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
+C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
+C:\Users\DIANA\Desktop\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojResolveAssemblyReference.cache
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csproj.CoreCompileInputs.cache
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfoInputs.cache
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Anul 3 - sem2\Git Paw\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
+D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
+D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
+D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csproj.CoreCompileInputs.cache
+D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfoInputs.cache
+D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
+D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
+D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
+D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojAssemblyReference.cache
