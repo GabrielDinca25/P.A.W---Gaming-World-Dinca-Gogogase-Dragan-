@@ -16,6 +16,20 @@
 </head>
 
 <body>
+    <script runat="server" type="text/javascript" src="~/js/GamesApi.js"></script>
+    <script>
+        var gamesApi = new GamesApi();
+        var games = gamesApi.getAllGames(5);
+        games.done(
+            function (response) {
+                for (var i = 0; i < response.length; i++) {
+                    $("#allProductsSelect").append('<option value="' + response[i].name + '">' + response[i].name + '</option>');
+                    $("#allProductsSelect2").append('<option value="' + response[i].name + '">' + response[i].name + '</option>');
+
+                }
+            });
+    </script>
+
 
     <div id="header">
         <div class="logo">
@@ -48,6 +62,8 @@
             <div id="box">
                 <div class="box-top">Games </div>
                 <div class="box-panel"><button class="btn btn-warning" data-toggle="modal" data-target="#AddProduct"><i class="glyphicon glyphicon-plus"></i> Add Product</button></div>
+                <div class="box-panel"><button class="btn btn-warning" data-toggle="modal" data-target="#RemoveProduct"><i class="glyphicon glyphicon-plus"></i> Remove Product</button></div>
+                <div class="box-panel"><button class="btn btn-warning" data-toggle="modal" data-target="#UpdateProduct"><i class="glyphicon glyphicon-plus"></i> Update Product Price</button></div>
             </div>
 
             <div class="modal" id="AddProduct" role="dialog">
@@ -66,7 +82,7 @@
                                     <input type="text" name="name" class="form-control" placeholder="Enter the name of the game" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="keyPrice" class="form-control"  placeholder="Enter the price of the activation key" />
+                                    <input type="text" name="keyPrice" class="form-control" placeholder="Enter the price of the activation key" />
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="hardPrice" class="form-control" placeholder="Enter the price of the hard-case game" />
@@ -75,7 +91,7 @@
                                     <input type="text" name="platform" class="form-control" placeholder="Enter the platform of the game" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="image" class="form-control"  placeholder="Enter the name of the image" />
+                                    <input type="text" name="image" class="form-control" placeholder="Enter the name of the image" />
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="genre" class="form-control" placeholder="Enter the genre of the game" />
@@ -92,18 +108,78 @@
                     </div>
                 </div>
             </div>
-                        <div id="box">
-                            <div class="box-top">Reviews</div>
-                            <div class="box-panel">...</div>
+
+            <div class="modal" id="RemoveProduct" role="dialog">
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add Product</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-
+                        <div class="modal-body">
+                            <form action="http://localhost:50209/api/games/RemoveProduct" method="get">
+                                <div class="form-group">
+                                    <select name="productName" id="allProductsSelect">
+                                        <option>Select product</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-warning" value="Remove Product" />
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-
                 </div>
-                <!-- #container -->
-                <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+            </div>
 
-                <script src="js/index.js"></script>
+            <div class="modal" id="UpdateProduct" role="dialog">
+                <div class="modal-dialog">
 
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add Product</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="http://localhost:50209/api/games/UpdateProduct" method="get">
+                                <div class="form-group">
+                                    <select name="productName" id="allProductsSelect2">
+                                        <option>Select product</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="keyPrice" class="form-control" placeholder="Enter the new key price of the game" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="hardPrice" class="form-control" placeholder="Enter the new hard-case price of the game" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-warning" value="Update Product Price" />
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="box">
+                <div class="box-top">Reviews</div>
+                <div class="box-panel">...</div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- #container -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script src="js/index.js"></script>
+    @Html.Raw(TempData["msg"])
 </body>
 </html>
