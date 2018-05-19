@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link runat="server" href="~/css/styles.css" rel="stylesheet">
     <link runat="server" rel="stylesheet" href="~/css/ionicons.min.css">
 
@@ -26,16 +27,60 @@
             });
     </script>
 
+    <script runat="server" src="~/js/UserAPI.js"></script>
+    <script>
+        var userManager = new UserAPI();
+        var user = userManager.getSignedInUser();
+        user.done(
+            function (response) {
+                if (response[0].email != null) {
+                    email = response[0].email;
+                    $('#loggedInUser').html("");
+                    $('#loggedInUser').append(email);
+                    if (email.startsWith("admin")) {
+                        var adminPanelButton = document.getElementById("adminPanelButton");
+                        adminPanelButton.style.display = "inline-block";
+                    }
+                    else {
+                        var adminPanelButton = document.getElementById("adminPanelButton");
+                        adminPanelButton.style.display = "none";
+                    }
+                    var loginButton = document.getElementById("loginButton");
+                    loginButton.style.display = "none";
+                    var registerButton = document.getElementById("registerButton");
+                    registerButton.style.display = "none";
+                    var logOutButton = document.getElementById("logOutButton");
+                    logOutButton.style.display = "inline-block";
+                    var shoppingCartButton = document.getElementById("shoppingCartButton");
+                    shoppingCartButton.style.display = "inline-block";
+                } else {
+                    var adminPanelButton = document.getElementById("adminPanelButton");
+                    adminPanelButton.style.display = "none";
+                    var loggedInUserButton = document.getElementById("loggedInUserButton");
+                    loggedInUserButton.style.display = "none";
+                    var loginButton = document.getElementById("loginButton");
+                    loginButton.style.display = "inline-block";
+                    var registerButton = document.getElementById("registerButton");
+                    registerButton.style.display = "inline-block";
+                    var logOutButton = document.getElementById("logOutButton");
+                    logOutButton.style.display = "none";
+                    var shoppingCartButton = document.getElementById("shoppingCartButton");
+                    shoppingCartButton.style.display = "none";
+
+                }
+            });
+    </script>
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="@Url.Action("Index", "Home")">Gaming World</a>
             </div>
-            <form class="navbar-form navbar-left" action="/action_page.php">
+            <form class="navbar-form navbar-left" action="http://localhost:50209/api/games/GetSearchResults" method="get">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="search">
+                    <input type="text" id="searchBar" class="form-control" placeholder="Search" name="search">
                     <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
+                        <button class="btn btn-default" type="submit" onclick="displaySearchResults(document.getElementById('searchBar').value)">
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </div>
@@ -57,9 +102,12 @@
             </ul>
             <div class="navbarbuttons">
                 <form>
-                    <a class="btn btn-warning" href="@Url.Action("ShoppingCart", "Home")"><i class="glyphicon glyphicon-shopping-cart"></i></a>
-                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Login">Login</button>
-                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Register">Register</button>
+                    <button type="button" id="loginButton" class="btn btn-warning" data-toggle="modal" data-target="#Login">Login</button>
+                    <button type="button" id="registerButton" class="btn btn-warning" data-toggle="modal" data-target="#Register">Register</button>
+                    <a href="@Url.Action("Profile", "Home" )" id="loggedInUserButton" class="btn btn-info"><span class="glyphicon glyphicon-user"></span><span id="loggedInUser"></span></a>
+                    <a href="@Url.Action("LogOut", "Login")" id="logOutButton" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span> Log out</a>
+                    <a class="btn btn-warning" href="@Url.Action("ShoppingCart", "Home")" id="shoppingCartButton"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    <a class="btn btn-warning" id="adminPanelButton" href="@Url.Action("Admin", "Home")"> <i class="glyphicon glyphicon-cog"></i></a>
                 </form>
             </div>
         </div>
@@ -77,20 +125,59 @@
                 </div>
 
                 <div class="modal-body">
-                    <form role="form">
+                    <form role="form" action="http://localhost:50209/api/login/Login" method="post">
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="text" name="email" class="form-control" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-warning" value="Login">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="Register" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form role="form" action="http://localhost:50209/api/register/Get" method="get">
+                        <div class="form-group">
+                            <input type="text" name="firstName" class="form-control" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lastName" class="form-control" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="confirmedPassword" class="form-control" placeholder="Confirm Password">
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-warning" value="Register">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
 
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-warning Log-In">Log In</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+
             </div>
         </div>
     </div>

@@ -12,19 +12,81 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script runat="server" src="~/js/app.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
+        <script runat="server" type="text/javascript" src="~/js/GamesApi.js"></script>
+        <script>
+            var gamesApi = new GamesApi();
+            var games = gamesApi.getGameToAdd();
+            games.done(
+
+                function (response) {
+                    for (var i = 0; i < response.length; i++) {
+                        var status = "In Stock"
+                        if (response[i].amount > 0) {
+                            status = "Out of stock";
+                        }
+                        $("#cartProducts").append('<tr><td class= "col-sm-8 col-md-6" ><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="/images/' + response[i].image + '" style="width: 72px; height: 72px;"> </a><div class="media-body"><h4 class="media-heading"><a href="#">' + response[i].name + ' </a></h4><span>Status: </span>' + status + '<span><strong></strong></span></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"><span>1</span></td><td class="col-sm-1 col-md-1 text-center"><strong>$' + response[i].keyPrice + '<td class="col-sm-1 col-md-1 text-center"><strong>$' + response[i].keyPrice + '</strong></td><td class="col-sm-1 col-md-1"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Remove</button></td>');
+                    }
+                });
+        </script>
+
+        <script runat="server" src="~/js/UserAPI.js"></script>
+        <script>
+            var userManager = new UserAPI();
+            var user = userManager.getSignedInUser();
+            user.done(
+                function (response) {
+                    if (response[0].email != null) {
+                        email = response[0].email;
+                        $('#loggedInUser').html("");
+                        $('#loggedInUser').append(email);
+                        if (email.startsWith("admin")) {
+                            var adminPanelButton = document.getElementById("adminPanelButton");
+                            adminPanelButton.style.display = "inline-block";
+                        }
+                        else {
+                            var adminPanelButton = document.getElementById("adminPanelButton");
+                            adminPanelButton.style.display = "none";
+                        }
+                        var loginButton = document.getElementById("loginButton");
+                        loginButton.style.display = "none";
+                        var registerButton = document.getElementById("registerButton");
+                        registerButton.style.display = "none";
+                        var logOutButton = document.getElementById("logOutButton");
+                        logOutButton.style.display = "inline-block";
+                        var shoppingCartButton = document.getElementById("shoppingCartButton");
+                        shoppingCartButton.style.display = "inline-block";
+                    } else {
+                        var adminPanelButton = document.getElementById("adminPanelButton");
+                        adminPanelButton.style.display = "none";
+                        var loggedInUserButton = document.getElementById("loggedInUserButton");
+                        loggedInUserButton.style.display = "none";
+                        var loginButton = document.getElementById("loginButton");
+                        loginButton.style.display = "inline-block";
+                        var registerButton = document.getElementById("registerButton");
+                        registerButton.style.display = "inline-block";
+                        var logOutButton = document.getElementById("logOutButton");
+                        logOutButton.style.display = "none";
+                        var shoppingCartButton = document.getElementById("shoppingCartButton");
+                        shoppingCartButton.style.display = "none";
+
+                    }
+                });
+        </script>
+
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="@Url.Action("Index", "Home")">Gaming World</a>
                 </div>
-                <form class="navbar-form navbar-left" action="/action_page.php">
+                <form class="navbar-form navbar-left" action="http://localhost:50209/api/games/GetSearchResults" method="get">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="search">
+                        <input type="text" id="searchBar" class="form-control" placeholder="Search" name="search">
                         <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit">
+                            <button class="btn btn-default" type="submit" onclick="displaySearchResults(document.getElementById('searchBar').value)">
                                 <i class="glyphicon glyphicon-search"></i>
                             </button>
                         </div>
@@ -32,55 +94,26 @@
                 </form>
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            PC
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Products", "Home")">All games</a></li>
-                            <li><a href="#">Games on discount</a></li>
-                            <li><a href="#">On stock</a></li>
-                        </ul>
+                        <a href="@Url.Action("ProductsPC", "Home")">PC</a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            PS4
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">All games</a></li>
-                            <li><a href="#">Games on discount</a></li>
-                            <li><a href="#">On stock</a></li>
-                        </ul>
+                        <a href="@Url.Action("ProductsPS", "Home")">PS4</a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Xbox ONE
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">All games</a></li>
-                            <li><a href="#">Games on discount</a></li>
-                            <li><a href="#">On stock</a></li>
-                        </ul>
+                        <a href="@Url.Action("ProductsXbox", "Home")">XBOX One</a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Nintendo Switch
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">All games</a></li>
-                            <li><a href="#">Games on discount</a></li>
-                            <li><a href="#">On stock</a></li>
-                        </ul>
+                        <a href="@Url.Action("ProductsSwitch", "Home")">Nintendo Switch</a>
                     </li>
                 </ul>
                 <div class="navbarbuttons">
                     <form>
-                        <a class="btn btn-warning" href="@Url.Action("ShoppingCart", "Home")"><i class="glyphicon glyphicon-shopping-cart"></i></a>
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Login">Login</button>
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Register">Register</button>
+                        <button type="button" id="loginButton" class="btn btn-warning" data-toggle="modal" data-target="#Login">Login</button>
+                        <button type="button" id="registerButton" class="btn btn-warning" data-toggle="modal" data-target="#Register">Register</button>
+                        <a href="@Url.Action("Profile", "Home" )" id="loggedInUserButton" class="btn btn-info"><span class="glyphicon glyphicon-user"></span><span id="loggedInUser"></span></a>
+                        <a href="@Url.Action("LogOut", "Login")" id="logOutButton" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span> Log out</a>
+                        <a class="btn btn-warning" href="@Url.Action("ShoppingCart", "Home")" id="shoppingCartButton"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <a class="btn btn-warning" id="adminPanelButton" href="@Url.Action("Admin", "Home")"> <i class="glyphicon glyphicon-cog"></i></a>
                     </form>
                 </div>
             </div>
@@ -98,19 +131,18 @@
                     </div>
 
                     <div class="modal-body">
-                        <form role="form">
+                        <form role="form" action="http://localhost:50209/api/login/Login" method="post">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="text" name="email" class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password" name="password" class="form-control" placeholder="Password">
                             </div>
-
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-warning" value="Login">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning">Log In</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -128,29 +160,30 @@
                     </div>
 
                     <div class="modal-body">
-                        <form role="form">
+                        <form role="form" action="http://localhost:50209/api/register/Get" method="get">
                             <div class="form-group">
-                                <input type="firstName" class="form-control" placeholder="First Name">
+                                <input type="text" name="firstName" class="form-control" placeholder="First Name">
                             </div>
                             <div class="form-group">
-                                <input type="lastName" class="form-control" placeholder="Last Name">
+                                <input type="text" name="lastName" class="form-control" placeholder="Last Name">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="text" name="email" class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password" name="password" class="form-control" placeholder="Password">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Confirm Password">
+                                <input type="password" name="confirmedPassword" class="form-control" placeholder="Confirm Password">
+                            </div>
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-warning" value="Register">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
 
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning">Register</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -158,9 +191,9 @@
         <div class="container" style="color: white;">
             <div class="row">
                 <div class="col-sm-12 col-md-10 col-md-offset-1">
-                    <table class="table">
+                    <table style="color:white" class="table">
                         <thead>
-                            <tr>
+                            <tr style="color:white">
                                 <th>Product</th>
                                 <th>Quantity</th>
                                 <th class="text-center">Price</th>
@@ -168,30 +201,7 @@
                                 <th> </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td class="col-sm-8 col-md-6">
-                                    <div class="media">
-                                        <a class="thumbnail pull-left" href="#"> <img class="media-object" runat="server" src="~/images/acorigins.png" style="width: 72px; height: 72px;"> </a>
-                                        <div class="media-body">
-                                            <h4 class="media-heading"><a href="@Url.Action("ACOrigins", "Products")">Assassin's Creed Origins</a></h4>
-                                            <span>Status: </span><span><strong>In Stock</strong></span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="col-sm-1 col-md-1" style="text-align: center">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" value="1">
-                                </td>
-                                <td class="col-sm-1 col-md-1 text-center"><strong>$ 49.90</strong></td>
-                                <td class="col-sm-1 col-md-1 text-center"><strong>$ 49.00</strong></td>
-                                <td class="col-sm-1 col-md-1">
-                                    <button type="button" class="btn btn-danger">
-                                        <span class="glyphicon glyphicon-remove"></span> Remove
-                                    </button>
-                                </td>
-                            </tr>
-
-                        </tbody>
+                        <tbody id="cartProducts"></tbody>
                         <tfoot>
                             <tr>
                                 <td>   </td>
@@ -260,7 +270,7 @@
                 </div>
             </div>
         </div>
-        </div>
+
 
 
     </body>
