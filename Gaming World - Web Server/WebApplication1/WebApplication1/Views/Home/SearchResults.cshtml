@@ -31,13 +31,13 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="@Url.Action("Index", "Home")">Gaming World</a>
             </div>
-            <form class="navbar-form navbar-left" action="/action_page.php">
+            <form class="navbar-form navbar-left" action="http://localhost:50209/api/games/GetSearchResults" method="get">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="search">
+                    <input type="text" id="searchBar" class="form-control" placeholder="Search" name="search">
                     <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
+                        <a href="#" class="btn btn-default" type="submit" onclick='displaySearchResults(document.getElementById("searchBar").value)'>
                             <i class="glyphicon glyphicon-search"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </form>

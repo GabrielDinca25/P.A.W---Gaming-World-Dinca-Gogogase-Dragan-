@@ -80,9 +80,9 @@
                 <div class="input-group">
                     <input type="text" id="searchBar" class="form-control" placeholder="Search" name="search">
                     <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit" onclick="displaySearchResults(document.getElementById('searchBar').value)">
+                        <a href="#" class="btn btn-default" type="submit" onclick='return displaySearchResults(document.getElementById("searchBar").value)'>
                             <i class="glyphicon glyphicon-search"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </form>
@@ -225,82 +225,76 @@
         <div class="checkBlockLeft" id="checkBlock">
             <h1 class="orangeTextLarge">Platform:</h1>
             <label>
-                <input type="checkbox">
+                <input type="checkbox" onclick="handleClick()" name="Platform" value="PC">
                 <span>PC</span>
             </label>
             <label>
-                <input type="checkbox">
+                <input type="checkbox" onclick="handleClick()" name="Platform" value="PS4">
                 <span>PlayStation 4</span>
             </label>
             <label>
-                <input type="checkbox">
+                <input type="checkbox" onclick="handleClick()" name="Platform" value="Xbox">
                 <span>Xbox One</span>
             </label>
             <label>
-                <input type="checkbox">
+                <input type="checkbox" onclick="handleClick()" name="Platform" value="Switch">
                 <span>Nintendo Switch</span>
             </label>
 
-            <h1 class="orangeTextLarge">Stile:</h1>
+            <h1 class="orangeTextLarge">Genre:</h1>
             <label>
-                <input type="checkbox" onclick="handleClick(this)" name="Action">
+                <input type="checkbox" onclick="handleClick()" name="Genre" value="Action">
                 <span>Action</span>
             </label>
             <label>
-                <input type="checkbox">
+                <input type="checkbox" onclick="handleClick()" name="Genre" value="Adventure">
                 <span>Adventure</span>
             </label>
             <label>
-                <input type="checkbox">
+                <input type="checkbox" onclick="handleClick()" name="Genre" value="Arcade">
                 <span>Arcade</span>
             </label>
             <label>
-                <input type="checkbox">
+                <input type="checkbox" onclick="handleClick()" name="Genre" value="Strategy">
                 <span>Strategy</span>
             </label>
             <label>
-                <input type="checkbox">
-                <span>Sport</span>
+                <input type="checkbox" onclick="handleClick()" name="Genre" value="Sports">
+                <span>Sports</span>
             </label>
             <label>
-                <input type="checkbox">
+                <input type="checkbox" onclick="handleClick()" name="Genre" value="Fighting">
                 <span>Fighting</span>
             </label>
             <label>
-                <input type="checkbox">
+                <input type="checkbox" onclick="handleClick()" name="Genre" value="Racing">
                 <span>Racing</span>
             </label>
             <label>
-                <input type="checkbox">
-                <span>Logical</span>
-            </label>
-
-            <h1 class="orangeTextLarge">Available:</h1>
-            <label>
-                <input type="checkbox">
-                <span>In stoc</span>
+                <input type="checkbox" onclick="handleClick()" name="Genre" value="Logic">
+                <span>Logic</span>
             </label>
 
             <h1 class="orangeTextLarge">Price:</h1>
             <label>
-                <input type="checkbox">
-                <span>50</span>
+                <input type="checkbox" onclick="handleClick()" name="Price" value="5">
+                <span>Less than 5</span>
             </label>
             <label>
-                <input type="checkbox">
-                <span>50-100</span>
+                <input type="checkbox" onclick="handleClick()" name="Price" value="5-10">
+                <span>5-10</span>
             </label>
             <label>
-                <input type="checkbox">
-                <span>100-250</span>
+                <input type="checkbox" onclick="handleClick()" name="Price" value="10-25">
+                <span>10-25</span>
             </label>
             <label>
-                <input type="checkbox">
-                <span>250-500</span>
+                <input type="checkbox" onclick="handleClick()" name="Price" value="25-50">
+                <span>25-50</span>
             </label>
             <label>
-                <input type="checkbox">
-                <span>500</span>
+                <input type="checkbox" onclick="handleClick()" name="Price" value="50">
+                <span>More than 50</span>
             </label>
         </div>
 
