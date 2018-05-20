@@ -13140,26 +13140,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DIANA\\.nuget\\packages\\": {},
+    "C:\\Users\\gogoa\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "D:\\Anul 3 - sem2\\Git Paw\\Gaming World - Web Server\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "D:\\Programe\\GitRepository\\Proiect P.A.W\\Gaming World - Web Server\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "D:\\Anul 3 - sem2\\Git Paw\\Gaming World - Web Server\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\DIANA\\.nuget\\packages\\",
-      "outputPath": "D:\\Anul 3 - sem2\\Git Paw\\Gaming World - Web Server\\WebApplication1\\WebApplication1\\obj\\",
+      "projectPath": "D:\\Programe\\GitRepository\\Proiect P.A.W\\Gaming World - Web Server\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\gogoa\\.nuget\\packages\\",
+      "outputPath": "D:\\Programe\\GitRepository\\Proiect P.A.W\\Gaming World - Web Server\\WebApplication1\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\DIANA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gogoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13183,30 +13180,30 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.Extensions.Configuration.Json": {
+          "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.1"
-          },
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-            "target": "Package",
-            "version": "2.0.3"
+            "version": "[2.0.6, )"
           },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
-            "version": "2.0.2"
-          },
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
-          },
-          "Microsoft.AspNetCore.All": {
-            "target": "Package",
-            "version": "2.0.6"
+            "version": "[2.0.2, )"
           },
           "Microsoft.AspNetCore.Session": {
             "target": "Package",
-            "version": "2.0.3"
+            "version": "[2.0.3, )"
+          },
+          "Microsoft.Extensions.Configuration.Json": {
+            "target": "Package",
+            "version": "[2.0.1, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
+          },
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+            "target": "Package",
+            "version": "[2.0.3, )"
           }
         },
         "imports": [

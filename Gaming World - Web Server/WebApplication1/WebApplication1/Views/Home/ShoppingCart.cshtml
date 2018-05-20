@@ -28,7 +28,7 @@
                         if (response[i].amount > 0) {
                             status = "Out of stock";
                         }
-                        $("#cartProducts").append('<tr><td class= "col-sm-8 col-md-6" ><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="/images/' + response[i].image + '" style="width: 72px; height: 72px;"> </a><div class="media-body"><h4 class="media-heading"><a href="#">' + response[i].name + ' </a></h4><span>Status: </span>' + status + '<span><strong></strong></span></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"><span>1</span></td><td class="col-sm-1 col-md-1 text-center"><strong>$' + response[i].keyPrice + '<td class="col-sm-1 col-md-1 text-center"><strong>$' + response[i].keyPrice + '</strong></td><td class="col-sm-1 col-md-1"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Remove</button></td>');
+                        $("#cartProducts").append('<tr><td class= "col-sm-8 col-md-6" ><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="/images/' + response[i].image + '" style="width: 72px; height: 72px;"> </a><div class="media-body"><h4 class="media-heading"><a href="#">' + response[i].name + ' </a></h4><span>Status: </span>' + status + '<span><strong></strong></span></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"><span>1</span></td><td class="col-sm-1 col-md-1 text-center"><strong>$' + response[i].keyPrice + '<td class="col-sm-1 col-md-1 text-center"><strong>$' + response[i].keyPrice + '</strong></td><td class="col-sm-1 col-md-1"><form action="http://localhost:50209/api/cart/Remove" method="get"><input type="hidden" readonly name="gameName" value="' + response[i].name + '"><input type="submit" class="btn btn-danger" value="Remove"></form></td>');
                     }
                 });
         </script>
@@ -272,6 +272,6 @@
         </div>
 
 
-
+        @Html.Raw(TempData["msg"])
     </body>
 </html>
