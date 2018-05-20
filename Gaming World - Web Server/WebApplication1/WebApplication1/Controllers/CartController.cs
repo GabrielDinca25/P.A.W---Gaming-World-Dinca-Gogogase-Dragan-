@@ -76,6 +76,32 @@ namespace WebApplication1.Controllers
             return RedirectToAction("ShoppingCart", "Home");
         }
 
+        [HttpGet]
+        [ActionName("Checkout")]
+        public ActionResult Checkout()
+        {
+            
+            foreach (var game in cart_db.CartProducts)
+            {
+                cart_db.CartProducts.Remove(game);
+            }
+            cart_db.SaveChanges();
+            return RedirectToAction("ShoppingCart", "Home");
+        }
+
+        [HttpGet]
+        [ActionName("GetTotalPrice")]
+        public ActionResult GetTotalPrice()
+        {
+
+            foreach (var game in cart_db.CartProducts)
+            {
+                cart_db.CartProducts.Remove(game);
+            }
+            cart_db.SaveChanges();
+            return RedirectToAction("ShoppingCart", "Home");
+        }
+
         public bool CheckDuplicate(Game game)
         {
 
