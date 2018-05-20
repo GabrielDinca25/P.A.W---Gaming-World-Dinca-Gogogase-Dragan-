@@ -73,5 +73,29 @@ namespace WebApplication1.Controllers
         {
             return db.UserCredentials.AsEnumerable();
         }
+
+        [HttpGet]
+        [ActionName("GetUserInfo")]
+        public IEnumerable<User> GetUserInfo()
+        {
+            String email = HttpContext.Session.GetString("email");
+            var data = from u in db.UserCredentials
+                        orderby u.Email
+                        select u;
+            foreach (var dataSelected in data)
+            {
+                if (dataSelected.Email.Equals(email))
+                {
+                    List<User> usernameFakeList = new List<User>();
+                    usernameFakeList.Add(dataSelected);
+                    return usernameFakeList.AsEnumerable();
+                   
+                }
+            }
+
+            List<User> usernameFakeList2 = new List<User>();
+            return usernameFakeList2.AsEnumerable();
+        }
+
     }
 }
