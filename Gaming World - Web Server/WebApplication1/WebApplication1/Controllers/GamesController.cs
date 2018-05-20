@@ -90,9 +90,9 @@ namespace WebApplication1.Controllers
 
             var productToUpdate = db.Games.Where(g => g.Name.Equals(productName)).FirstOrDefault();
 
-            Int32 keyPriceInt, hardPriceInt;
-            bool kpresult = Int32.TryParse(newKeyPrice, out keyPriceInt);
-            bool hpresult = Int32.TryParse(newKeyPrice, out hardPriceInt); 
+            Single keyPriceInt, hardPriceInt;
+            bool kpresult = Single.TryParse(newKeyPrice, out keyPriceInt);
+            bool hpresult = Single.TryParse(newKeyPrice, out hardPriceInt); 
 
             if (productToUpdate != null && kpresult && hpresult)
             {

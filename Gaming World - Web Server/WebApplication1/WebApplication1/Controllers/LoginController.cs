@@ -97,5 +97,35 @@ namespace WebApplication1.Controllers
             return usernameFakeList2.AsEnumerable();
         }
 
+        [HttpGet]
+        [ActionName("UpdateProfile")]
+        public IActionResult UpdateProfile()
+        {
+            String firstName = HttpContext.Request.Query["firstName"].ToString();
+            String lastName = HttpContext.Request.Query["lastName"].ToString();
+            String email = HttpContext.Request.Query["email"].ToString();
+            String password = HttpContext.Request.Query["password"].ToString();
+
+            var userToUpdate = db.UserCredentials.Where(g => g.Email.Equals(HttpContext.Session.GetString("email"))).FirstOrDefault();
+            
+
+            if (userToUpdate != null )
+            {
+                db.Remove(userToUpdate);
+                db.SaveChanges();
+                User updateUser = new User(email,firstName,lastName,password);
+                db.Add(updateUser);
+                db.SaveChanges();
+                return LogOut();
+            }
+            else
+            {
+                TempData["msg"] = "<script>alert('Invalid input');</script>";
+                return RedirectToAction("Profile", "Home");
+            }
+
+            
+        }
+
     }
 }
