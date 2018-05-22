@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\DIANA\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\DIANA\\.nuget\\packages",
+      "C:\\Users\\gogoa\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\gogoa\\.nuget\\packages",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }

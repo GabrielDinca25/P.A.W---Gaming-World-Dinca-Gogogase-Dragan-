@@ -32,11 +32,12 @@ namespace WebApplication1.Controllers
                 var currentGame = db.Games
                                    .Where(game => game.Name.Equals(gameName))
                                    .FirstOrDefault();
-                if (currentGame != null)
+                var gameToAdd = new GameOnCart(email, currentGame.Name, currentGame.KeyPrice, currentGame.HardPrice, currentGame.Platform, currentGame.Image, currentGame.Genre, currentGame.Amount);
+                if (gameToAdd != null)
                 {
-                    if (!CheckDuplicate(currentGame))
-                    {
-                        cart_db.CartProducts.Add(currentGame);
+                    if (!CheckDuplicate(gameToAdd))
+                    {                   
+                        cart_db.CartProducts.Add(gameToAdd);
                         cart_db.SaveChanges();
                     }
                 }
@@ -52,9 +53,12 @@ namespace WebApplication1.Controllers
 
         [HttpGet]
         [ActionName("GetCartProducts")]
-        public IEnumerable<Game> GetCartProducts(int id)
+        public IEnumerable<GameOnCart> GetCartProducts(int id)
         {
-            return cart_db.CartProducts.AsEnumerable();
+            String email = HttpContext.Session.GetString("email");
+            var inCartGame = cart_db.CartProducts
+                                   .Where(game => game.Email.Equals(email));
+            return inCartGame.AsEnumerable();
             //return from g in cart_db.CartProducts select new Game { Name = g.Name, KeyPrice = g.KeyPrice, HardPrice = g.HardPrice, Platform = g.Platform, Image = g.Image };
         }
 
@@ -89,31 +93,24 @@ namespace WebApplication1.Controllers
             return RedirectToAction("ShoppingCart", "Home");
         }
 
-        [HttpGet]
-        [ActionName("GetTotalPrice")]
-        public ActionResult GetTotalPrice()
+
+        public bool CheckDuplicate(GameOnCart game)
         {
-
-            foreach (var game in cart_db.CartProducts)
+            if (cart_db != null)
             {
-                cart_db.CartProducts.Remove(game);
-            }
-            cart_db.SaveChanges();
-            return RedirectToAction("ShoppingCart", "Home");
-        }
-
-        public bool CheckDuplicate(Game game)
-        {
-
-            var games = from u in cart_db.CartProducts
-                        orderby u.Name
-                        select u;
-            foreach (var gameName in games)
-            {
-                if (gameName.Name.Equals(game.Name))
+                var games = from u in cart_db.CartProducts
+                            orderby u.Name
+                            select u;
+                if (games != null)
                 {
-                    TempData["msg"] = "<script>alert('Incorrect username already exist');</script>";
-                    return true;
+                    foreach (var gameName in games)
+                    {
+                        if (gameName.Name.Equals(game.Name))
+                        {
+                            TempData["msg"] = "<script>alert('Game already exist');</script>";
+                            return true;
+                        }
+                    }
                 }
             }
             return false;

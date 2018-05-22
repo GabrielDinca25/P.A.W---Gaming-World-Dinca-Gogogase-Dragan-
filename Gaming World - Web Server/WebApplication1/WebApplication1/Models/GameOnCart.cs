@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Models
 {
-    public class Game
+    public class GameOnCart
     {
         [Key]
         public String Name { get; set; }
+        public String Email { get; set; }
         public String KeyPrice { get; set; }
         public String HardPrice { get; set; }
         public String Platform { get; set; }
@@ -18,12 +19,13 @@ namespace WebApplication1.Models
         public String Genre { get; set; }
         public String Amount { get; set; }
 
-        public Game()
+        public GameOnCart()
         {
         }
 
-        public Game(String name, String key, String hard, String platform, String image, String genre, String amount)
+        public GameOnCart(String email, String name, String key, String hard, String platform, String image, String genre, String amount)
         {
+            Email = email;
             Name = name;
             KeyPrice = key;
             HardPrice = hard;
@@ -34,21 +36,18 @@ namespace WebApplication1.Models
         }
     }
 
-    public class GameDBContext : DbContext
+    public class CartProductDBContext : DbContext
     {
-        public GameDBContext(DbContextOptions<GameDBContext> options) : base(options)
+        public CartProductDBContext(DbContextOptions<CartProductDBContext> options) : base(options)
         {
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Game>().ToTable("Games");
+            modelBuilder.Entity<GameOnCart>().ToTable("CartProduct");
         }
 
-        public DbSet<Game> Games { get; set; }
+        public DbSet<GameOnCart> CartProducts { get; set; }
     }
-
-
-
 }

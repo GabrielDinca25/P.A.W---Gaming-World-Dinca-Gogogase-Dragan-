@@ -64,3 +64,14 @@ D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication
 D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
 D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb
 D:\Programe\GitRepository\Proiect P.A.W\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojAssemblyReference.cache
+C:\Users\gogoa\Desktop\P.A.W---Gaming-World-Dinca-Gogogase-Dragan--master\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.deps.json
+C:\Users\gogoa\Desktop\P.A.W---Gaming-World-Dinca-Gogogase-Dragan--master\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.json
+C:\Users\gogoa\Desktop\P.A.W---Gaming-World-Dinca-Gogogase-Dragan--master\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.runtimeconfig.dev.json
+C:\Users\gogoa\Desktop\P.A.W---Gaming-World-Dinca-Gogogase-Dragan--master\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.dll
+C:\Users\gogoa\Desktop\P.A.W---Gaming-World-Dinca-Gogogase-Dragan--master\Gaming World - Web Server\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.0\WebApplication1.pdb
+C:\Users\gogoa\Desktop\P.A.W---Gaming-World-Dinca-Gogogase-Dragan--master\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csprojAssemblyReference.cache
+C:\Users\gogoa\Desktop\P.A.W---Gaming-World-Dinca-Gogogase-Dragan--master\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\gogoa\Desktop\P.A.W---Gaming-World-Dinca-Gogogase-Dragan--master\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfoInputs.cache
+C:\Users\gogoa\Desktop\P.A.W---Gaming-World-Dinca-Gogogase-Dragan--master\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.AssemblyInfo.cs
+C:\Users\gogoa\Desktop\P.A.W---Gaming-World-Dinca-Gogogase-Dragan--master\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.dll
+C:\Users\gogoa\Desktop\P.A.W---Gaming-World-Dinca-Gogogase-Dragan--master\Gaming World - Web Server\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.0\WebApplication1.pdb

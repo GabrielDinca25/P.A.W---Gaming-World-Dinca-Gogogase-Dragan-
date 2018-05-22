@@ -25,7 +25,7 @@
                 function (response) {
                     var total = 0.0;
                     for (var i = 0; i < response.length; i++) {
-                        var status = "In Stock"
+                        var status;
                         if (response[i].amount > 0) {
                             status = response[i].amount;
                         } else {
