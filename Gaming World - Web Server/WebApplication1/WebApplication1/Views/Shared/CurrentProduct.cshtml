@@ -62,6 +62,24 @@
             });
     </script>
 
+    <script runat="server" src="~/js/ReviewsApi.js"></script>
+    <script>
+        var reviewsApi = new ReviewsApi();
+        var reviews = reviewsApi.getAllReviews();
+        reviews.done(
+            function (response) {
+                for (var i = 0; i < response.length; i++)
+                {
+                    console.log(response[i].game);
+                    if (response[i].game == "@currentProduct.Name") {
+
+                        $("#reviewBlock").append('<div class="row"><div class="col-sm-3"><img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded"><div class="review-block-name"><a href="#">' + response[i].sender + '</a></div><div class="review-block-date">' + response[i].dateTime + '</div></div><div class="col-sm-9"><div class="review-block-description">' + response[i].content + '</div></div></div><hr />');
+                    }
+                }
+
+            });
+    </script>
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -215,16 +233,7 @@
                     <div id="myTabContent" class="tab-content">
                         <!-- SERVICE ONE -->
                         <div class="tab-pane fade" id="service-one">
-                            <section class="container product-desc">
-                                <p>
-                                    Assassin's Creed: Origins is the tenth main installment in the Assassin's Creed series developed by Ubisoft. The game was released worldwide on October 27, 2017. bisoft Montreal is the lead development studio on Origins, with the team comprising many of the people that previously worked on Assassin's Creed IV: Black Flag. Ubisoft Sofia, Ubisoft Singapore, Ubisoft Shanghai, Ubisoft Chengdu, Ubisoft Bucharest, Ubisoft Kiev and the Sperasoft studio are also collaborating on the development of the game.[1]
-
-                                    Due to the setting being further back in time than previous entries in the franchise, history books did not always suffice as reference. To compensate, Maxime Durand worked closely with various historians and Egyptian experts to fill in the blanks where needed. In some cases, the lack of reference meant the Art team had to create the look and overall feel of what Ancient Egypt would have been like at the time.[1]
-
-                                    A new Artificial Intelligence framework was also created from the ground up, since the developers wanted the non-player characters, both human and animal, to have their own agenda and activities. Full day cycles were created to make the world feel dynamic and alive.
-                                </p>
-
-                            </section>
+                            <section class="container product-desc"></section>
                         </div>
 
                         <!-- SERVICE TWO -->
@@ -234,202 +243,35 @@
 
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <div class="rating-block">
-                                            <h4>Average user rating</h4>
-                                            <h2 class="bold padding-bottom-7">4.3 <small style="color: white;">/ 5</small></h2>
-                                            <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                            </button>
-                                            <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                            </button>
-                                            <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                            </button>
-                                            <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                            </button>
-                                            <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                                                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                            </button>
-                                        </div>
                                         <div>
-                                            <textarea name="comment" id="comment-box" form="usrform" placeholder="Enter text here..."></textarea>
-                                            <button class="btn btn-warning">Submit review</button>
-                                        </div>
-                                    </div>
-                                    <div id="rating-breakdown" class="col-sm-3">
-                                        <h4>Rating breakdown</h4>
-                                        <div class="pull-left">
-                                            <div class="pull-left" style="width:35px; line-height:1;">
-                                                <div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
-                                            </div>
-                                            <div class="pull-left" style="width:180px;">
-                                                <div class="progress" style="height:9px; margin:8px 0;">
-                                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
-                                                        <span class="sr-only">80% Complete (danger)</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="pull-right" style="margin-left:10px;">1</div>
-                                        </div>
-                                        <div class="pull-left">
-                                            <div class="pull-left" style="width:35px; line-height:1;">
-                                                <div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
-                                            </div>
-                                            <div class="pull-left" style="width:180px;">
-                                                <div class="progress" style="height:9px; margin:8px 0;">
-                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
-                                                        <span class="sr-only">80% Complete (danger)</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="pull-right" style="margin-left:10px;">1</div>
-                                        </div>
-                                        <div class="pull-left">
-                                            <div class="pull-left" style="width:35px; line-height:1;">
-                                                <div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
-                                            </div>
-                                            <div class="pull-left" style="width:180px;">
-                                                <div class="progress" style="height:9px; margin:8px 0;">
-                                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
-                                                        <span class="sr-only">80% Complete (danger)</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="pull-right" style="margin-left:10px;">0</div>
-                                        </div>
-                                        <div class="pull-left">
-                                            <div class="pull-left" style="width:35px; line-height:1;">
-                                                <div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
-                                            </div>
-                                            <div class="pull-left" style="width:180px;">
-                                                <div class="progress" style="height:9px; margin:8px 0;">
-                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
-                                                        <span class="sr-only">80% Complete (danger)</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="pull-right" style="margin-left:10px;">0</div>
-                                        </div>
-                                        <div class="pull-left">
-                                            <div class="pull-left" style="width:35px; line-height:1;">
-                                                <div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
-                                            </div>
-                                            <div class="pull-left" style="width:180px;">
-                                                <div class="progress" style="height:9px; margin:8px 0;">
-                                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
-                                                        <span class="sr-only">80% Complete (danger)</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="pull-right" style="margin-left:10px;">0</div>
+                                            <form action="http://localhost:50209/api/reviews/SubmitReview/" method="post">
+                                                <input name="game" type="hidden" value="@currentProduct.Name" />
+                                                <textarea name="content" id="comment-box" placeholder="Enter text here..."></textarea>
+                                                <input type="submit" class="btn btn-warning" value="Submit review" />
+                                            </form>
+
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="col-sm-7">
-                                        <hr />
-                                        <div class="review-block">
-                                            <div class="row">
-                                                <div class="col-sm-3">
-                                                    <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-                                                    <div class="review-block-name"><a href="#">gdinca</a></div>
-                                                    <div class="review-block-date">January 29, 2016<br />1 day ago</div>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <div class="review-block-rate">
-                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="review-block-title">this was nice in buy</div>
-                                                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <div class="row">
-                                                <div class="col-sm-3">
-                                                    <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-                                                    <div class="review-block-name"><a href="#">agogoase</a></div>
-                                                    <div class="review-block-date">January 29, 2016<br />1 day ago</div>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <div class="review-block-rate">
-                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="review-block-title">this was nice in buy</div>
-                                                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-                                                </div>
-                                            </div>
-                                            <hr />
-                                            <div class="row">
-                                                <div class="col-sm-3">
-                                                    <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-                                                    <div class="review-block-name"><a href="#">ddragan</a></div>
-                                                    <div class="review-block-date">January 29, 2016<br />1 day ago</div>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <div class="review-block-rate">
-                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                                                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="review-block-title">this was nice in buy</div>
-                                                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
+
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <hr />
+                                    <div class="review-block" id="reviewBlock">
+
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                    <hr>
                 </div>
+                <hr>
             </div>
-
         </div>
+
+    </div>
     </div>
 
     <footer>

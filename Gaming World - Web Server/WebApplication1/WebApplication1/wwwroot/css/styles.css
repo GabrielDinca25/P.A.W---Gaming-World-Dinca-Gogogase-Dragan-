@@ -114,6 +114,9 @@ div.footerdiv{
 }
 .image-main-section{
     margin-bottom:20px;
+    width: 250px;
+    max-width: 250px;
+    padding: 0;
 }
 .img-part{
     border-radius: 5px;
@@ -121,6 +124,8 @@ div.footerdiv{
     border:1px solid#353535;
     background-color:#222222;
     padding-bottom: 20px;
+    width: 250px;
+    max-width: 250px;
 }
 .img-section{
     padding: 5px;
