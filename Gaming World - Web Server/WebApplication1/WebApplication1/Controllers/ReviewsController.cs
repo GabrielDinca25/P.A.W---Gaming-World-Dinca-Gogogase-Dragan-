@@ -23,15 +23,24 @@ namespace WebApplication1.Controllers
         [ActionName("SubmitReview")]
         public IActionResult SubmitReview([FromForm] String game, [FromForm] String content)
         {
-            String id = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
-            String sender = HttpContext.Session.GetString("email");
-            String datetime = DateTime.Now.ToString();
+            String email = HttpContext.Session.GetString("email");
+            if (email != null)
+            {
+                String id = Convert.ToBase64String(Guid.NewGuid().ToByteArray()).Substring(0, 8);
+                String sender = HttpContext.Session.GetString("email");
+                String datetime = DateTime.Now.ToString();
 
-            Review rev = new Review(id, game, sender, content, datetime);
+                Review rev = new Review(id, game, sender, content, datetime);
 
-            db.Add(rev);
-            db.SaveChanges();
+                db.Add(rev);
+                db.SaveChanges();
 
+               
+            }
+            else
+            {
+                TempData["msg"] = "<script>alert('Va rugam sa va logati pentru a lasa comentarii');</script>";
+            }           
             return RedirectToAction("CurrentProduct", "CurrentProduct", new { productName = game });
         }
 
