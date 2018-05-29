@@ -46,7 +46,7 @@ namespace WebApplication1.Controllers
             }
             else
             {
-                TempData["msg"] = "<script>alert('Va rugam sa va logati');</script>";
+                TempData["msg"] = "<script>alert('You have to be logged in to add a game to your shopping cart');</script>";
                 return RedirectToAction("Index", "Home");
             }
         }
@@ -107,7 +107,7 @@ namespace WebApplication1.Controllers
                     {
                         if (gameName.Name.Equals(game.Name))
                         {
-                            TempData["msg"] = "<script>alert('Game already exist');</script>";
+                            TempData["msg"] = "<script>alert('Game already exists');</script>";
                             return true;
                         }
                     }

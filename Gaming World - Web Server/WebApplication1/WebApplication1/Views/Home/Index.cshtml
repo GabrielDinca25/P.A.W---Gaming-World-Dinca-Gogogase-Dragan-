@@ -199,9 +199,9 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="centered-image" src="slider/org_origins.jpg">
+                        <img class="centered-image" src="~/slider/bf1.png">
                         <div class="carousel-caption">
-                            <a href="@Url.Action("CurrentProduct", "CurrentProduct", new { productName="game1" })" class="btn btn-info" role="button">Buy now</a>
+                            <a href="@Url.Action("CurrentProduct", "CurrentProduct", new { productName="Battlefield 1 (PS4)" })" class="btn btn-info" role="button">Buy now</a>
                         </div>
 
                     </div>
@@ -209,7 +209,14 @@
                     <div class="item">
                         <img class="centered-image" src="slider/orgfif18.jpg">
                         <div class="carousel-caption">
-                            <a href="@Url.Action("CurrentProduct", "CurrentProduct", new { productName="game1" })" class="btn btn-info" role="button">Buy now</a>
+                            <a href="@Url.Action("CurrentProduct", "CurrentProduct", new { productName="Fifa 18(PC)" })" class="btn btn-info" role="button">Buy now</a>
+                        </div>
+
+                    </div>
+                    <div class="item">
+                        <img class="centered-image" src="~/slider/fc5.png">
+                        <div class="carousel-caption">
+                            <a href="@Url.Action("CurrentProduct", "CurrentProduct", new { productName="Far Cry 5(PS4)" })" class="btn btn-info" role="button">Buy now</a>
                         </div>
 
                     </div>
@@ -310,24 +317,26 @@
             </div>
         </div>
 
-        <footer>
-            <label>
-                <div class="footer">
-                    <div class="footerdiv">
-                        <h1 class="orangeTextLarge">Info</h1>
-                        <p>Pozele de pe site au rol ilustrativ.</p>
-                        <p>Produsele reale pot diferi!</p>
-                        <p>Ne rezervăm dreptul de a schimba prețurile, dacă este cazul!</p>
+        <div>
+            @*<footer>
+                <label>
+                    <div class="footer">
+                        <div class="footerdiv">
+                            <h1 class="orangeTextLarge">Info</h1>
+                            <p>Pozele de pe site au rol ilustrativ.</p>
+                            <p>Produsele reale pot diferi!</p>
+                            <p>Ne rezervăm dreptul de a schimba prețurile, dacă este cazul!</p>
+                        </div>
+                        <div class="footerdiv">
+                            <h1 class="orangeTextLarge">Contact</h1>
+                            <p>Pe parcursul saptamanii intre orele 09:00-17:00</p>
+                            <p>Telefon:07600000</p>
+                            <p>Email:<a href="gamingworld@gmail.com">gamingworld@gmail.com</a></p>
+                        </div>
                     </div>
-                    <div class="footerdiv">
-                        <h1 class="orangeTextLarge">Contact</h1>
-                        <p>Pe parcursul saptamanii intre orele 09:00-17:00</p>
-                        <p>Telefon:07600000</p>
-                        <p>Email:<a href="gamingworld@gmail.com">gamingworld@gmail.com</a></p>
-                    </div>
-                </div>
-            </label>
-        </footer>
+                </label>
+            </footer>
+        </div>*@
 
         @Html.Raw(TempData["msg"])
     </body>

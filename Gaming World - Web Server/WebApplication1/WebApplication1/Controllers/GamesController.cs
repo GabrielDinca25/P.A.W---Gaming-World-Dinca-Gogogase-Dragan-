@@ -42,7 +42,7 @@ namespace WebApplication1.Controllers
                     platform = "PS4";
                     break;
                 case 3:
-                    platform = "Xbox One";
+                    platform = "Xbox";
                     break;
                 case 4:
                     platform = "Switch";
