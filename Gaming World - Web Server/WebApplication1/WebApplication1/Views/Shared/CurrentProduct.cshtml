@@ -213,11 +213,12 @@
                         <div id='key-price' style='display: block' class="product-price">$ @currentProduct.KeyPrice</div>
                         <div id='hard-case-price' style='display: none' class="product-price">$ @currentProduct.HardPrice</div>
                         <hr>
-                        <div class="btn-group cart">
-                            <button type="button" class="btn-lg btn-warning">
-                                Add to cart
-                            </button>
-                        </div>
+                        <form action="http://localhost:50209/api/cart/Add" method="get">
+                            <div class="btn-group cart">
+                                <input name="gameName" type="hidden" value="@currentProduct.Name" />
+                                <input type="submit" class="btn-lg btn-warning" value="Add to cart" />
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
