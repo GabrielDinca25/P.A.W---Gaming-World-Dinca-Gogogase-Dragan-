@@ -29,6 +29,7 @@
                     }
                 });
         </script>
+        
 
         <script runat="server" src="~/js/UserAPI.js"></script>
         <script>
@@ -200,7 +201,7 @@
                     <div class="item active">
                         <img class="centered-image" src="slider/org_origins.jpg">
                         <div class="carousel-caption">
-                            <a href="@Url.Action("ACOrigins", "Products")" class="btn btn-info" role="button">Buy now</a>
+                            <a href="@Url.Action("CurrentProduct", "CurrentProduct", new { productName="game1" })" class="btn btn-info" role="button">Buy now</a>
                         </div>
 
                     </div>
@@ -208,7 +209,7 @@
                     <div class="item">
                         <img class="centered-image" src="slider/orgfif18.jpg">
                         <div class="carousel-caption">
-                            <a href="#" class="btn btn-info" role="button">Buy now</a>
+                            <a href="@Url.Action("CurrentProduct", "CurrentProduct", new { productName="game1" })" class="btn btn-info" role="button">Buy now</a>
                         </div>
 
                     </div>
